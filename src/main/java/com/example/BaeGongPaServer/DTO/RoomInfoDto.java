@@ -18,4 +18,6 @@ public class RoomInfoDto implements Serializable {
     private final String inviteCode;
     private final Instant insDate;
     private final Instant updDate;
+
+    
 }
