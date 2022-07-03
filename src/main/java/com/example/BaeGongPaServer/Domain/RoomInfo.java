@@ -1,22 +1,5 @@
 package com.example.BaeGongPaServer.Domain;
 
-<<<<<<< HEAD
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.time.Instant;
-
-@Entity
-@Table(name = "room_info")
-public class RoomInfo {
-    @Id
-    @Column(name = "room_no", nullable = false)
-    private Integer id;
-
-    @Column(name = "addr_detail", nullable = false)
-    private String addrDetail;
-=======
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -40,7 +23,6 @@ public class RoomInfo {
 
     @Column(name = "room_sub", nullable = false)
     private String roomSub;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 
     @Column(name = "area_l_code", nullable = false)
     private Integer areaLCode;
@@ -51,34 +33,6 @@ public class RoomInfo {
     @Column(name = "area_s_code", nullable = false)
     private Integer areaSCode;
 
-<<<<<<< HEAD
-    @Column(name = "hash_tag", nullable = false)
-    private String hashTag;
-
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
-
-    @Column(name = "invite_code", nullable = false)
-    private String inviteCode;
-
-    @Column(name = "mem_no", nullable = false)
-    private Integer memNo;
-
-    @Column(name = "menu_cnt", nullable = false)
-    private Integer menuCnt;
-
-    @Column(name = "room_conts", nullable = false)
-    private String roomConts;
-
-    @Column(name = "room_mem_cnt", nullable = false)
-    private Integer roomMemCnt;
-
-    @Column(name = "room_title", nullable = false)
-    private String roomTitle;
-
-    @Column(name = "succ_cnt", nullable = false)
-    private Integer succCnt;
-=======
     @Column(name = "addr_detail", nullable = false)
     private String addrDetail;
 
@@ -94,27 +48,10 @@ public class RoomInfo {
 
     @Column(name = "ins_date", nullable = false)
     private Instant insDate;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
 
-<<<<<<< HEAD
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getAddrDetail() {
-        return addrDetail;
-    }
-
-    public void setAddrDetail(String addrDetail) {
-        this.addrDetail = addrDetail;
-=======
     @OneToMany(mappedBy = "roomNo")
     private Set<MenuBoxInfo> menuBoxInfos = new LinkedHashSet<>();
 
@@ -143,7 +80,6 @@ public class RoomInfo {
 
     public void setRoomSub(String roomSub) {
         this.roomSub = roomSub;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     }
 
     public Integer getAreaLCode() {
@@ -170,86 +106,6 @@ public class RoomInfo {
         this.areaSCode = areaSCode;
     }
 
-<<<<<<< HEAD
-    public String getHashTag() {
-        return hashTag;
-    }
-
-    public void setHashTag(String hashTag) {
-        this.hashTag = hashTag;
-    }
-
-    public Instant getInsDate() {
-        return insDate;
-    }
-
-    public void setInsDate(Instant insDate) {
-        this.insDate = insDate;
-    }
-
-    public String getInviteCode() {
-        return inviteCode;
-    }
-
-    public void setInviteCode(String inviteCode) {
-        this.inviteCode = inviteCode;
-    }
-
-    public Integer getMemNo() {
-        return memNo;
-    }
-
-    public void setMemNo(Integer memNo) {
-        this.memNo = memNo;
-    }
-
-    public Integer getMenuCnt() {
-        return menuCnt;
-    }
-
-    public void setMenuCnt(Integer menuCnt) {
-        this.menuCnt = menuCnt;
-    }
-
-    public String getRoomConts() {
-        return roomConts;
-    }
-
-    public void setRoomConts(String roomConts) {
-        this.roomConts = roomConts;
-    }
-
-    public Integer getRoomMemCnt() {
-        return roomMemCnt;
-    }
-
-    public void setRoomMemCnt(Integer roomMemCnt) {
-        this.roomMemCnt = roomMemCnt;
-    }
-
-    public String getRoomTitle() {
-        return roomTitle;
-    }
-
-    public void setRoomTitle(String roomTitle) {
-        this.roomTitle = roomTitle;
-    }
-
-    public Integer getSuccCnt() {
-        return succCnt;
-    }
-
-    public void setSuccCnt(Integer succCnt) {
-        this.succCnt = succCnt;
-    }
-
-    public Instant getUpdDate() {
-        return updDate;
-    }
-
-    public void setUpdDate(Instant updDate) {
-        this.updDate = updDate;
-=======
     public String getAddrDetail() {
         return addrDetail;
     }
@@ -312,7 +168,6 @@ public class RoomInfo {
 
     public void setOrderInfos(Set<OrderInfo> orderInfos) {
         this.orderInfos = orderInfos;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     }
 
 }

@@ -23,18 +23,6 @@ public class CustomUserDetailService implements UserDetailsService {
 
         MemInfo memInfo = memInfoRepository.findByMemId(memId);
         if (memInfo == null) {
-<<<<<<< HEAD
-            throw new UsernameNotFoundException(memInfo + "is not found.");
-        }
-
-        AuthUserDAO authUserDAO = new AuthUserDAO();
-        authUserDAO.setMemId(memInfo.getMemId());
-        authUserDAO.setMemPwd(passwordEncoder.encode(memInfo.getMemPwd()));
-        authUserDAO.setMemNo(memInfo.getMemNo());
-        authUserDAO.setMemName(memInfo.getMemName());
-        authUserDAO.setMemNick("test_nick");
-        authUserDAO.setRole("ADMIN");
-=======
             throw new UsernameNotFoundException("memInfo is not found.");
         }
 
@@ -44,7 +32,6 @@ public class CustomUserDetailService implements UserDetailsService {
         authUserDAO.setMemPwd(passwordEncoder.encode(memInfo.getMemPwd()));
         authUserDAO.setMemNick(memInfo.getMemNick());
         authUserDAO.setRole(memInfo.getMemRoll() + "");
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 
         return authUserDAO;
     }

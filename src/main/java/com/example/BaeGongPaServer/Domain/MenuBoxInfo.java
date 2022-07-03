@@ -1,31 +1,5 @@
 package com.example.BaeGongPaServer.Domain;
 
-<<<<<<< HEAD
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.time.Instant;
-
-@Entity
-@Table(name = "menu_box_info")
-public class MenuBoxInfo {
-    @Id
-    @Column(name = "menu_box_no", nullable = false)
-    private Integer id;
-
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
-
-    @Column(name = "menu_box_name", nullable = false)
-    private String menuBoxName;
-
-    @Column(name = "menu_cnt", nullable = false)
-    private Integer menuCnt;
-
-    @Column(name = "room_no", nullable = false)
-    private Integer roomNo;
-=======
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -59,29 +33,10 @@ public class MenuBoxInfo {
 
     @Column(name = "ins_date", nullable = false)
     private Instant insDate;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
 
-<<<<<<< HEAD
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Instant getInsDate() {
-        return insDate;
-    }
-
-    public void setInsDate(Instant insDate) {
-        this.insDate = insDate;
-    }
-
-=======
     @OneToMany(mappedBy = "menuBoxNo")
     private Set<MenuInfo> menuInfos = new LinkedHashSet<>();
 
@@ -93,7 +48,6 @@ public class MenuBoxInfo {
         this.id = id;
     }
 
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     public String getMenuBoxName() {
         return menuBoxName;
     }
@@ -102,8 +56,6 @@ public class MenuBoxInfo {
         this.menuBoxName = menuBoxName;
     }
 
-<<<<<<< HEAD
-=======
     public String getMenuBoxSub() {
         return menuBoxSub;
     }
@@ -112,7 +64,6 @@ public class MenuBoxInfo {
         this.menuBoxSub = menuBoxSub;
     }
 
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     public Integer getMenuCnt() {
         return menuCnt;
     }
@@ -121,16 +72,6 @@ public class MenuBoxInfo {
         this.menuCnt = menuCnt;
     }
 
-<<<<<<< HEAD
-    public Integer getRoomNo() {
-        return roomNo;
-    }
-
-    public void setRoomNo(Integer roomNo) {
-        this.roomNo = roomNo;
-    }
-
-=======
     public RoomInfo getRoomNo() {
         return roomNo;
     }
@@ -147,7 +88,6 @@ public class MenuBoxInfo {
         this.insDate = insDate;
     }
 
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     public Instant getUpdDate() {
         return updDate;
     }
@@ -156,8 +96,6 @@ public class MenuBoxInfo {
         this.updDate = updDate;
     }
 
-<<<<<<< HEAD
-=======
     public Set<MenuInfo> getMenuInfos() {
         return menuInfos;
     }
@@ -166,5 +104,4 @@ public class MenuBoxInfo {
         this.menuInfos = menuInfos;
     }
 
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 }

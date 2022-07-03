@@ -1,9 +1,6 @@
 package com.example.BaeGongPaServer.Auth;
 
-<<<<<<< HEAD
-=======
 import com.example.BaeGongPaServer.DTO.AuthDTO;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 import com.example.BaeGongPaServer.Service.CustomUserDetailService;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
@@ -41,11 +38,7 @@ public class AuthProvider {
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
-<<<<<<< HEAD
-    public String createToken(String user) {
-=======
     public String createToken(AuthDTO authDTO) {
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
         Map<String, Object> headers = new HashMap<>();
         Map<String, Object> payloads = new HashMap<>();
 
@@ -54,13 +47,7 @@ public class AuthProvider {
         headers.put("alg", "HS256");
 
         // Payload 정보
-<<<<<<< HEAD
-        payloads.put("id", user);
-        payloads.put("name", "name_" + user);
-
-=======
         payloads.put("memId", authDTO.getMemId());
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 
         Date date = new Date();
         System.out.println("SecretKey : " + secretKey);
@@ -70,11 +57,7 @@ public class AuthProvider {
                 .builder()
                 .setHeader(headers)
                 .setClaims(payloads)
-<<<<<<< HEAD
-                .setSubject("subject_name")
-=======
                 .setSubject("user")
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
                 .setIssuedAt(date)
                 .setExpiration(new Date(date.getTime() + tokenValidTime))
                 .signWith(SignatureAlgorithm.HS256, secretKey)

@@ -31,17 +31,9 @@ public class AuthFilter extends GenericFilterBean {
         String authToken = req.getHeader("Authentication");
 
         try {
-<<<<<<< HEAD
-
-            if (!authToken.isEmpty() && authProvider.validateJwtToken(req, authToken)) {    // token 검증
-                System.out.println("AuthFilter:Authentication = " + authToken);
-                Authentication authentication = authProvider.getAuthentication(authToken); // 인증객체 생성
-
-=======
             if (authToken != null && !authToken.isEmpty() && authProvider.validateJwtToken(req, authToken)) {    // token 검증
                 System.out.println("AuthFilter:Authentication = " + authToken);
                 Authentication authentication = authProvider.getAuthentication(authToken); // 인증객체 생성
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
                 SecurityContextHolder.getContext().setAuthentication(authentication);   //SecurityContextHolder 인증
             }
         } catch (Exception e) {
@@ -50,17 +42,6 @@ public class AuthFilter extends GenericFilterBean {
         } finally {
             chain.doFilter(request, response);
             System.out.println("AuthFilter:CONTINUE");
-<<<<<<< HEAD
-//            AuthUserDAO authUserDAO =  (AuthUserDAO)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//            System.out.println(authUserDAO);
-
-        }
-
-
-    }
-
-=======
         }
     }
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 }

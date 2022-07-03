@@ -14,10 +14,6 @@ import java.util.Collection;
 public class AuthUserDAO implements UserDetails {
     private long idx;
     private Integer memNo;
-<<<<<<< HEAD
-    private String memName;
-=======
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     private String memNick;
     private String memId;
     private String memPwd;

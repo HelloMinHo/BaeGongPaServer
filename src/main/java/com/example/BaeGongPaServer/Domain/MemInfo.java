@@ -1,43 +1,5 @@
 package com.example.BaeGongPaServer.Domain;
 
-<<<<<<< HEAD
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.time.Instant;
-
-@Entity
-@Table(name = "mem_info")
-public class MemInfo {
-    @Id
-    @Column(name = "mem_no", nullable = false)
-    private Integer memNo;
-
-    @Column(name = "auth_slct", nullable = false)
-    private Character authSlct;
-
-    @Column(name = "auth_yn", nullable = false)
-    private Character authYn;
-
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
-
-    @Column(name = "mem_id", nullable = false)
-    private String memId;
-
-    @Column(name = "mem_name", nullable = false)
-    private String memName;
-
-    @Column(name = "mem_phone", nullable = false)
-    private String memPhone;
-
-    @Column(name = "mem_pwd", nullable = false)
-    private String memPwd;
-
-    @Column(name = "mem_sex", nullable = false)
-    private Character memSex;
-=======
 import org.hibernate.annotations.DynamicInsert;
 import javax.persistence.*;
 import java.time.Instant;
@@ -85,17 +47,13 @@ public class MemInfo {
 
     @Column(name = "ins_date", nullable = false)
     private Instant insDate;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
 
-<<<<<<< HEAD
-=======
     @OneToMany(mappedBy = "hostMemNo")
     private Set<RoomInfo> roomInfos = new LinkedHashSet<>();
 
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     public Integer getMemNo() {
         return memNo;
     }
@@ -104,70 +62,6 @@ public class MemInfo {
         this.memNo = memNo;
     }
 
-<<<<<<< HEAD
-    public Character getAuthSlct() {
-        return authSlct;
-    }
-
-    public void setAuthSlct(Character authSlct) {
-        this.authSlct = authSlct;
-    }
-
-    public Character getAuthYn() {
-        return authYn;
-    }
-
-    public void setAuthYn(Character authYn) {
-        this.authYn = authYn;
-    }
-
-    public Instant getInsDate() {
-        return insDate;
-    }
-
-    public void setInsDate(Instant insDate) {
-        this.insDate = insDate;
-    }
-
-    public String getMemId() {
-        return memId;
-    }
-
-    public void setMemId(String memId) {
-        this.memId = memId;
-    }
-
-    public String getMemName() {
-        return memName;
-    }
-
-    public void setMemName(String memName) {
-        this.memName = memName;
-    }
-
-    public String getMemPhone() {
-        return memPhone;
-    }
-
-    public void setMemPhone(String memPhone) {
-        this.memPhone = memPhone;
-    }
-
-    public String getMemPwd() {
-        return memPwd;
-    }
-
-    public void setMemPwd(String memPwd) {
-        this.memPwd = memPwd;
-    }
-
-    public Character getMemSex() {
-        return memSex;
-    }
-
-    public void setMemSex(Character memSex) {
-        this.memSex = memSex;
-=======
     public String getMemId() {
         return memId;
     }
@@ -254,7 +148,6 @@ public class MemInfo {
 
     public void setInsDate(Instant insDate) {
         this.insDate = insDate;
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
     }
 
     public Instant getUpdDate() {
@@ -265,8 +158,6 @@ public class MemInfo {
         this.updDate = updDate;
     }
 
-<<<<<<< HEAD
-=======
     public Set<RoomInfo> getRoomInfos() {
         return roomInfos;
     }
@@ -277,5 +168,4 @@ public class MemInfo {
 
 
 
->>>>>>> fea833fbf35f24921e3c8ac6b38f284abce9c144
 }
