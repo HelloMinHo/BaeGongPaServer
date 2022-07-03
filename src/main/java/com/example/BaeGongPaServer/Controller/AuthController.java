@@ -43,7 +43,7 @@ public class AuthController {
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)
     public ApiResponse signUp(@RequestBody AuthDTO authDTO) {
         ApiResponse apiResponse = authService.memberLogin(authDTO);
-        System.out.println("apiResponse" + apiResponse);
+        System.out.println("apiResponse : " + apiResponse);
 
         return apiResponse;
     }

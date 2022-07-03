@@ -11,7 +11,7 @@ import java.util.Map;
 @Setter
 public class ApiResponse {
 
-    public ApiResponse() {
+    public ApiResponse()  {
     }
 
     private int code = HttpStatus.OK.value();

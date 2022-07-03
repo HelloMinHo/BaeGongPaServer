@@ -10,8 +10,8 @@ public class AuthDTO {
     private String memId;
     private String memPwd;
 
-    public AuthDTO(String memEmail, String memPwd) {
-        this.memId = memEmail;
+    public AuthDTO(String memId, String memPwd) {
+        this.memId = memId;
         this.memPwd = memPwd;
     }
 }

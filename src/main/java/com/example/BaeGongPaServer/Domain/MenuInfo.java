@@ -1,5 +1,6 @@
 package com.example.BaeGongPaServer.Domain;
 
+import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -11,6 +12,7 @@ import java.time.Instant;
 @Table(name = "menu_info")
 @DynamicInsert
 @DynamicUpdate
+@Data
 public class MenuInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,60 +38,5 @@ public class MenuInfo {
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getMenuName() {
-        return menuName;
-    }
-
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
-    }
-
-    public String getMenuSub() {
-        return menuSub;
-    }
-
-    public void setMenuSub(String menuSub) {
-        this.menuSub = menuSub;
-    }
-
-    public BigDecimal getMenuPrice() {
-        return menuPrice;
-    }
-
-    public void setMenuPrice(BigDecimal menuPrice) {
-        this.menuPrice = menuPrice;
-    }
-
-    public MenuBoxInfo getMenuBoxNo() {
-        return menuBoxNo;
-    }
-
-    public void setMenuBoxNo(MenuBoxInfo menuBoxNo) {
-        this.menuBoxNo = menuBoxNo;
-    }
-
-    public Instant getInsDate() {
-        return insDate;
-    }
-
-    public void setInsDate(Instant insDate) {
-        this.insDate = insDate;
-    }
-
-    public Instant getUpdDate() {
-        return updDate;
-    }
-
-    public void setUpdDate(Instant updDate) {
-        this.updDate = updDate;
-    }
 
 }

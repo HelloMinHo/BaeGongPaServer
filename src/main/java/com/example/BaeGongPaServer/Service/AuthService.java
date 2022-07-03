@@ -20,6 +20,7 @@ public class AuthService {
 
     public ApiResponse memberLogin(AuthDTO authDTO) {
 
+        System.out.println(authDTO.getMemId()+ " / " +  authDTO.getMemPwd());
         MemInfo memInfo = memInfoRepository.findByMemIdAndMemPwd(authDTO.getMemId(), authDTO.getMemPwd());
 
         ApiResponse apiResponse = new ApiResponse();
@@ -27,7 +28,7 @@ public class AuthService {
         if (memInfo == null) {
             apiResponse.setCode(401);
             apiResponse.setMessage("로그인 실패");
-            apiResponse.setResultValue("Token", "");
+            apiResponse.setResultValue("Token",null );
         } else {
             apiResponse.setCode(200);
             apiResponse.setMessage("로그인 성공");

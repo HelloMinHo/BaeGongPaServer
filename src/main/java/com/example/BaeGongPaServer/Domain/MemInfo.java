@@ -1,6 +1,8 @@
 package com.example.BaeGongPaServer.Domain;
 
+import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
+
 import javax.persistence.*;
 import java.time.Instant;
 import java.util.LinkedHashSet;
@@ -9,11 +11,12 @@ import java.util.Set;
 @Entity
 @Table(name = "mem_info")
 @DynamicInsert
+@Data
 public class MemInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mem_no", nullable = false)
-    private Integer memNo;
+    private Long memNo;
 
     @Column(name = "mem_id", nullable = false)
     private String memId;
@@ -34,7 +37,7 @@ public class MemInfo {
     private Integer memRoll;
 
     @Column(name = "auth_slct", nullable = false)
-    private Character authSlct;
+    private String authSlct;
 
     @Column(name = "auth_phone", nullable = false, length = 20)
     private String authPhone;
@@ -50,122 +53,5 @@ public class MemInfo {
 
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
-
-    @OneToMany(mappedBy = "hostMemNo")
-    private Set<RoomInfo> roomInfos = new LinkedHashSet<>();
-
-    public Integer getMemNo() {
-        return memNo;
-    }
-
-    public void setMemNo(Integer memNo) {
-        this.memNo = memNo;
-    }
-
-    public String getMemId() {
-        return memId;
-    }
-
-    public void setMemId(String memId) {
-        this.memId = memId;
-    }
-
-    public String getMemPwd() {
-        return memPwd;
-    }
-
-    public void setMemPwd(String memPwd) {
-        this.memPwd = memPwd;
-    }
-
-    public String getMemNick() {
-        return memNick;
-    }
-
-    public void setMemNick(String memNick) {
-        this.memNick = memNick;
-    }
-
-    public String getMemBgPhoto() {
-        return memBgPhoto;
-    }
-
-    public void setMemBgPhoto(String memBgPhoto) {
-        this.memBgPhoto = memBgPhoto;
-    }
-
-    public String getMemPfPhoto() {
-        return memPfPhoto;
-    }
-
-    public void setMemPfPhoto(String memPfPhoto) {
-        this.memPfPhoto = memPfPhoto;
-    }
-
-    public Integer getMemRoll() {
-        return memRoll;
-    }
-
-    public void setMemRoll(Integer memRoll) {
-        this.memRoll = memRoll;
-    }
-
-    public Character getAuthSlct() {
-        return authSlct;
-    }
-
-    public void setAuthSlct(Character authSlct) {
-        this.authSlct = authSlct;
-    }
-
-    public String getAuthPhone() {
-        return authPhone;
-    }
-
-    public void setAuthPhone(String authPhone) {
-        this.authPhone = authPhone;
-    }
-
-    public String getAuthName() {
-        return authName;
-    }
-
-    public void setAuthName(String authName) {
-        this.authName = authName;
-    }
-
-    public Instant getAuthDate() {
-        return authDate;
-    }
-
-    public void setAuthDate(Instant authDate) {
-        this.authDate = authDate;
-    }
-
-    public Instant getInsDate() {
-        return insDate;
-    }
-
-    public void setInsDate(Instant insDate) {
-        this.insDate = insDate;
-    }
-
-    public Instant getUpdDate() {
-        return updDate;
-    }
-
-    public void setUpdDate(Instant updDate) {
-        this.updDate = updDate;
-    }
-
-    public Set<RoomInfo> getRoomInfos() {
-        return roomInfos;
-    }
-
-    public void setRoomInfos(Set<RoomInfo> roomInfos) {
-        this.roomInfos = roomInfos;
-    }
-
-
 
 }

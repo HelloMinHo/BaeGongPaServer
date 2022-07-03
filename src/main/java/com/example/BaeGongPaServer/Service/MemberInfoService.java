@@ -33,7 +33,7 @@ public class MemberInfoService {
         //
         memInfo.setAuthName("");
         memInfo.setAuthPhone("");
-        memInfo.setAuthSlct(' ');
+        memInfo.setAuthSlct("");
 
 
 
