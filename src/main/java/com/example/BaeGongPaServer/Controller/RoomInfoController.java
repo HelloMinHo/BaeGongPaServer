@@ -49,7 +49,7 @@ public class RoomInfoController {
     }
 
     @RequestMapping(value = "/room/allRoomList", method = RequestMethod.GET)
-    public ApiResponse getMyRoomList(@RequestBody Map<String, Object> params) {
+    public ApiResponse getAllRoomList(@RequestBody Map<String, Object> params) {
 
         System.out.println(params.get("stDate"));
         System.out.println(params.get("enDate"));
@@ -62,9 +62,9 @@ public class RoomInfoController {
         //return roomInfoService.getAllRoomList(stDate, enDate);
 
 
-        return roomInfoService.getAllRoomList(stDate,enDate);
-
+        return roomInfoService.getAllRoomList(stDate, enDate);
     }
+
 
 
 }

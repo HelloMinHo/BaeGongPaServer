@@ -29,6 +29,9 @@ public class RoomInfoService {
 
     private final RoomInfoRepository roomInfoRepository;
 
+
+
+    // 전체 방 목록
     public ApiResponse getAllRoomList(Instant stDate, Instant enDate) {
 
         List<RoomInfo> rst = roomInfoRepository.findByInsDateBetween(stDate, enDate);
@@ -44,6 +47,7 @@ public class RoomInfoService {
         }
     }
 
+    // 나의 방 목록
     public ApiResponse getMyRoomList() {
 
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -62,6 +66,7 @@ public class RoomInfoService {
         }
     }
 
+    // 방 생성
     public ApiResponse createRoomInfo(RoomInfoDto roomInfoDto) {
 
 

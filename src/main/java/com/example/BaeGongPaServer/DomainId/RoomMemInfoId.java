@@ -1,4 +1,4 @@
-package com.example.BaeGongPaServer.Domain;
+package com.example.BaeGongPaServer.DomainId;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
