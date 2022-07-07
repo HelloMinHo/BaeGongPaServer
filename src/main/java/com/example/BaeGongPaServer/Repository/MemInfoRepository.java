@@ -14,4 +14,6 @@ public interface MemInfoRepository extends JpaRepository<MemInfo, Long> {
 
     MemInfo save(MemInfo memInfo);
 
+
+
 }

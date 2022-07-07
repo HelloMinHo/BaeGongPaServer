@@ -32,4 +32,18 @@ public class RoomMemInfoService {
         }
     }
 
+    public ApiResponse createRoomMemInfo(RoomMemInfo roomMemInfo) {
+
+        RoomMemInfo rst = roomMemInfoRepository.save(roomMemInfo);
+        if (rst == null) {
+            System.out.println("roomMemInfo IS NULL");
+
+            return new ApiResponse(401, null, "방 입장 실패");
+        } else {
+            System.out.println("roomMemInfo : " + rst);
+            System.out.println("roomNo : " + rst.getRoomNo());
+            return new ApiResponse(200, rst, "방 입장 성공");
+        }
+    }
+
 }

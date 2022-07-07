@@ -1,6 +1,5 @@
 package com.example.BaeGongPaServer.Repository;
 
-import com.example.BaeGongPaServer.Domain.RoomInfo;
 import com.example.BaeGongPaServer.Domain.RoomMemInfo;
 import com.example.BaeGongPaServer.DomainId.RoomMemInfoId;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -17,4 +16,6 @@ public interface RoomMemInfoRepository extends JpaRepository<RoomMemInfo, RoomMe
 
     @Override
     List<RoomMemInfo> findAll();
+
+    RoomMemInfo save(RoomMemInfo roomMemInfo);
 }

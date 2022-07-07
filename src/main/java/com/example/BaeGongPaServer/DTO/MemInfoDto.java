@@ -13,4 +13,5 @@ public class MemInfoDto implements Serializable {
     private final String memNick;
     private final String memBgPhoto;
     private final String memPfPhoto;
+
 }
