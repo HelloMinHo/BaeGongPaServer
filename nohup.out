@@ -1,0 +1,478 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.1)
+
+2022-07-06 13:45:36.024  INFO 8262 --- [           main] c.e.BaeGongPaServer.MinApplication       : Starting MinApplication using Java 11.0.15 on goorm with PID 8262 (/workspace/BaeGongPaServer/build/libs/BaeGongPaServer-0.0.1-SNAPSHOT.jar started by root in /workspace/BaeGongPaServer)
+2022-07-06 13:45:36.118  INFO 8262 --- [           main] c.e.BaeGongPaServer.MinApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-07-06 13:45:48.729  INFO 8262 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-06 13:45:50.226  INFO 8262 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1397 ms. Found 6 JPA repository interfaces.
+2022-07-06 13:45:56.927  INFO 8262 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$769673c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-06 13:45:59.424  INFO 8262 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-07-06 13:46:11.620  INFO 8262 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-06 13:46:12.024  INFO 8262 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-06 13:46:12.024  INFO 8262 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-06 13:46:13.528  INFO 8262 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-06 13:46:13.528  INFO 8262 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 36705 ms
+2022-07-06 13:46:18.921  INFO 8262 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-06 13:46:19.628  INFO 8262 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-06 13:46:22.728  INFO 8262 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-06 13:46:24.022  INFO 8262 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-06 13:46:28.726  INFO 8262 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-06 13:46:28.931  INFO 8262 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-06 13:46:40.934  INFO 8262 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-06 13:46:41.031  INFO 8262 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-06 13:46:50.222  WARN 8262 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-06 13:46:54.225  INFO 8262 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@39ee94de, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@642857e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@1668919e, org.springframework.security.web.header.HeaderWriterFilter@36b9cb99, org.springframework.security.web.authentication.logout.LogoutFilter@3eb292cd, com.example.BaeGongPaServer.Filter.AuthFilter@4c6b4ed7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22c53d82, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b67cc70, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21263314, org.springframework.security.web.session.SessionManagementFilter@3238e2aa, org.springframework.security.web.access.ExceptionTranslationFilter@2dd8ff1d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54e12f4c]
+2022-07-06 13:47:02.621  INFO 8262 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-06 13:47:02.821  INFO 8262 --- [           main] c.e.BaeGongPaServer.MinApplication       : Started MinApplication in 95.194 seconds (JVM running for 102.701)
+2022-07-06 13:47:14.926  INFO 8262 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-06 13:47:14.928  INFO 8262 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-06 13:47:14.937  INFO 8262 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 13:47:18 UTC 2022,Expiration: 1657118838326
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTE4ODM4LCJpYXQiOjE2NTcxMTUyMzgsIm1lbUlkIjoidGVzdCJ9.rI4gsmbRmjq-XvGDzuYMG8CMtOUFUejWNqicJ0jrlyw
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@2273fd8c
+AuthFilter:CONTINUE
+2022-07-06 13:47:25.930  INFO 8262 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-06 13:47:26.018  INFO 8262 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-07-06 13:47:26.120  INFO 8262 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.1)
+
+2022-07-06 13:48:30.525  INFO 8450 --- [           main] c.e.BaeGongPaServer.MinApplication       : Starting MinApplication using Java 11.0.15 on goorm with PID 8450 (/workspace/BaeGongPaServer/build/libs/BaeGongPaServer-0.0.1-SNAPSHOT.jar started by root in /workspace/BaeGongPaServer)
+2022-07-06 13:48:30.539  INFO 8450 --- [           main] c.e.BaeGongPaServer.MinApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-07-06 13:48:43.529  INFO 8450 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-06 13:48:44.527  INFO 8450 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 802 ms. Found 6 JPA repository interfaces.
+2022-07-06 13:48:51.730  INFO 8450 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$55a7baa0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-06 13:48:53.028  INFO 8450 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-07-06 13:48:57.931  INFO 8450 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-06 13:48:58.125  INFO 8450 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-06 13:48:58.126  INFO 8450 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-06 13:48:59.122  INFO 8450 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-06 13:48:59.122  INFO 8450 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 27689 ms
+2022-07-06 13:49:04.629  INFO 8450 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-06 13:49:05.420  INFO 8450 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-06 13:49:08.721  INFO 8450 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-06 13:49:10.034  INFO 8450 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-06 13:49:14.639  INFO 8450 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-06 13:49:14.836  INFO 8450 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-06 13:49:27.822  INFO 8450 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-06 13:49:27.928  INFO 8450 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-06 13:49:37.742  WARN 8450 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-06 13:49:41.921  INFO 8450 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2db33feb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30c3ae63, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ceff87d, org.springframework.security.web.header.HeaderWriterFilter@3252747e, org.springframework.security.web.authentication.logout.LogoutFilter@65bad087, com.example.BaeGongPaServer.Filter.AuthFilter@58658f63, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c7db926, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63300c4b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54e12f4c, org.springframework.security.web.session.SessionManagementFilter@2bfaba70, org.springframework.security.web.access.ExceptionTranslationFilter@631cb129, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e351d7]
+2022-07-06 13:49:49.725  INFO 8450 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-06 13:49:49.931  INFO 8450 --- [           main] c.e.BaeGongPaServer.MinApplication       : Started MinApplication in 87.71 seconds (JVM running for 96.103)
+2022-07-06 13:51:04.825  INFO 8450 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-06 13:51:04.826  INFO 8450 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-06 13:51:04.831  INFO 8450 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 13:51:07 UTC 2022,Expiration: 1657119067729
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTE5MDY3LCJpYXQiOjE2NTcxMTU0NjcsIm1lbUlkIjoidGVzdCJ9.tf_SFc88if4V17TUk9tIbCwRhopS-a-Wb7cOtpqQumE
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@2935d15
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 14:56:22 UTC 2022,Expiration: 1657122982524
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTIyOTgyLCJpYXQiOjE2NTcxMTkzODIsIm1lbUlkIjoidGVzdCJ9.FIuLxdWWPuOEWeYfKp0aW4mqgSvGMiQy0xwPf8Wlugo
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@5f7eeb5a
+AuthFilter:CONTINUE
+2022-07-06 14:59:17.698  WARN 8450 --- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:04:11 UTC 2022,Expiration: 1657123451728
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTIzNDUxLCJpYXQiOjE2NTcxMTk4NTEsIm1lbUlkIjoidGVzdCJ9.doTWj2xIeLADU1Q4D4MlBi43rP5ijyZ0fSILgqFi_tU
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@3c9f8fb8
+AuthFilter:CONTINUE
+2022-07-06 15:08:47.263  WARN 8450 --- [nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-06 15:18:40.336  WARN 8450 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-06 15:21:35.976  WARN 8450 --- [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:23:10 UTC 2022,Expiration: 1657124590427
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI0NTkwLCJpYXQiOjE2NTcxMjA5OTAsIm1lbUlkIjoidGVzdCJ9.Wi0T3iqzVvcz25nmzHbxkyM0K3rBZ6jHQEmRRgh5bTo
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@11540d2f
+AuthFilter:CONTINUE
+2022-07-06 15:23:51.990  INFO 8450 --- [nio-8080-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x000xe50x010x000x000xe10x030x03:0xa20xa4860xcb0xc2lK0xab0x04S0x123|Wx0x120xc40x95)0xff]0xce0xf6V0x1e0x120x90iK( ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.64.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:24:01 UTC 2022,Expiration: 1657124641638
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI0NjQxLCJpYXQiOjE2NTcxMjEwNDEsIm1lbUlkIjoidGVzdCJ9.wFd5GpJseUd6UJ_uTKtsMG8kbpBFxipWSJjcs-3CAaM
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@f2e5950
+AuthFilter:CONTINUE
+2022-07-06 15:24:11.284  WARN 8450 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-06 15:25:17.994  WARN 8450 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'memId': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false'); nested exception is com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'memId': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 7]]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-06 15:25:56.103  WARN 8450 --- [nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:26:45 UTC 2022,Expiration: 1657124805132
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI0ODA1LCJpYXQiOjE2NTcxMjEyMDUsIm1lbUlkIjoidGVzdCJ9.dq6lcN0Ojgxppng2jb0orYsxH-YutEHbU3S-GTq1KU0
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@251f2175
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:26:53 UTC 2022,Expiration: 1657124813524
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI0ODEzLCJpYXQiOjE2NTcxMjEyMTMsIm1lbUlkIjoidGVzdCJ9.ZG8t5spJYjX2uTJBefSQWbowwARcBV_UW5FHnzK-4Hs
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@660651c6
+AuthFilter:CONTINUE
+2022-07-06 15:31:20.719  WARN 8450 --- [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:40:38 UTC 2022,Expiration: 1657125638719
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI1NjM4LCJpYXQiOjE2NTcxMjIwMzgsIm1lbUlkIjoidGVzdCJ9.Bi1PMNVdVKtShdxVmhIGxdIAJakHYOZew515C8vZdzs
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@2f6c781a
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:49:20 UTC 2022,Expiration: 1657126160254
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI2MTYwLCJpYXQiOjE2NTcxMjI1NjAsIm1lbUlkIjoidGVzdCJ9.OKLUCx_YixA2dtsc6F_jWpwyw1Aieki4gx7YFJsfdVM
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@3124fd46
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Wed Jul 06 15:50:17 UTC 2022,Expiration: 1657126217142
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTI2MjE3LCJpYXQiOjE2NTcxMjI2MTcsIm1lbUlkIjoidGVzdCJ9.28OaJYrs3ZxE45guSfCM7bvf1lRe1jJbj6ba3bGJ1sA
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@3651f500
+AuthFilter:CONTINUE
+min@naver.com / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Thu Jul 07 01:53:05 UTC 2022,Expiration: 1657162385023
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MTYyMzg1LCJpYXQiOjE2NTcxNTg3ODUsIm1lbUlkIjoibWluQG5hdmVyLmNvbSJ9.tb6roR4MH1NNM1QEdilknKukZGaoEZnKGUXgAu74bnQ
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@713bac7c
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Thu Jul 07 13:55:00 UTC 2022,Expiration: 1657205700923
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjA1NzAwLCJpYXQiOjE2NTcyMDIxMDAsIm1lbUlkIjoidGVzdCJ9.mzA6ntlyp-np7NTNvygISTi3KSUyPZp9MTLNBaSvaQU
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@6ba8846b
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+SecretKey : minho
+Date : Thu Jul 07 14:19:11 UTC 2022,Expiration: 1657207151728
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjA3MTUxLCJpYXQiOjE2NTcyMDM1NTEsIm1lbUlkIjoidGVzdCJ9.JAlKrkQ1G6-PDF0fibW83BdXdZQu1Wn1VcCqWvSLexw
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@363fe7be
+AuthFilter:CONTINUE
