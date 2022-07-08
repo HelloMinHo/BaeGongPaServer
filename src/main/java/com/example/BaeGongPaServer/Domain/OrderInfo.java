@@ -1,5 +1,6 @@
 package com.example.BaeGongPaServer.Domain;
 
+import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -10,6 +11,7 @@ import java.time.Instant;
 @Table(name = "order_info")
 @DynamicInsert
 @DynamicUpdate
+@Data
 public class OrderInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,116 +61,5 @@ public class OrderInfo {
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOrderName() {
-        return orderName;
-    }
-
-    public void setOrderName(String orderName) {
-        this.orderName = orderName;
-    }
-
-    public String getOrderSub() {
-        return orderSub;
-    }
-
-    public void setOrderSub(String orderSub) {
-        this.orderSub = orderSub;
-    }
-
-    public RoomInfo getRoomNo() {
-        return roomNo;
-    }
-
-    public void setRoomNo(RoomInfo roomNo) {
-        this.roomNo = roomNo;
-    }
-
-    public Integer getOrderMemNo() {
-        return orderMemNo;
-    }
-
-    public void setOrderMemNo(Integer orderMemNo) {
-        this.orderMemNo = orderMemNo;
-    }
-
-    public Instant getOrderAbleDate() {
-        return orderAbleDate;
-    }
-
-    public void setOrderAbleDate(Instant orderAbleDate) {
-        this.orderAbleDate = orderAbleDate;
-    }
-
-    public Instant getOrderRcvDate() {
-        return orderRcvDate;
-    }
-
-    public void setOrderRcvDate(Instant orderRcvDate) {
-        this.orderRcvDate = orderRcvDate;
-    }
-
-    public String getPrePayYn() {
-        return prePayYn;
-    }
-
-    public void setPrePayYn(String prePayYn) {
-        this.prePayYn = prePayYn;
-    }
-
-    public String getMenuBoxYn() {
-        return menuBoxYn;
-    }
-
-    public void setMenuBoxYn(String menuBoxYn) {
-        this.menuBoxYn = menuBoxYn;
-    }
-
-    public Long getMenuBoxNo() {
-        return menuBoxNo;
-    }
-
-    public void setMenuBoxNo(Long menuBoxNo) {
-        this.menuBoxNo = menuBoxNo;
-    }
-
-    public String getOrderEndYn() {
-        return orderEndYn;
-    }
-
-    public void setOrderEndYn(String orderEndYn) {
-        this.orderEndYn = orderEndYn;
-    }
-
-    public Instant getOrderEndDate() {
-        return orderEndDate;
-    }
-
-    public void setOrderEndDate(Instant orderEndDate) {
-        this.orderEndDate = orderEndDate;
-    }
-
-    public Instant getInsDate() {
-        return insDate;
-    }
-
-    public void setInsDate(Instant insDate) {
-        this.insDate = insDate;
-    }
-
-    public Instant getUpdDate() {
-        return updDate;
-    }
-
-    public void setUpdDate(Instant updDate) {
-        this.updDate = updDate;
-    }
 
 }

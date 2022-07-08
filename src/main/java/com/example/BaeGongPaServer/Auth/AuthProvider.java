@@ -27,7 +27,7 @@ public class AuthProvider {
     private final CustomUserDetailService customUserDetailService;
 
     public String getUserInfo(String token) {
-        return (String) Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().get("id");
+        return (String) Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().get("memId");
     }
 
     // 토큰 인증 성공시 SecurityContextHolder 에 저장할 Authentication 객체 생성

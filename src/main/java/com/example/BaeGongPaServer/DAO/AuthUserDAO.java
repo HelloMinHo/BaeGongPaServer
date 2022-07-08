@@ -13,7 +13,7 @@ import java.util.Collection;
 @Setter
 public class AuthUserDAO implements UserDetails {
     private long idx;
-    private Integer memNo;
+    private Long memNo;
     private String memNick;
     private String memId;
     private String memPwd;
