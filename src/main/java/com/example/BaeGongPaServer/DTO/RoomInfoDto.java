@@ -19,5 +19,5 @@ public class RoomInfoDto implements Serializable {
     private final Instant insDate;
     private final Instant updDate;
 
-    
+
 }
