@@ -2,6 +2,7 @@ package com.example.BaeGongPaServer.Domain;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.time.Instant;
@@ -11,6 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "mem_info")
 @DynamicInsert
+@DynamicUpdate
 @Data
 public class MemInfo {
     @Id
@@ -53,5 +55,7 @@ public class MemInfo {
 
     @Column(name = "upd_date", nullable = false)
     private Instant updDate;
+
+
 
 }

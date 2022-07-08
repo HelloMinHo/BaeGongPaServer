@@ -476,3 +476,331 @@ Date : Thu Jul 07 14:19:11 UTC 2022,Expiration: 1657207151728
 Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjA3MTUxLCJpYXQiOjE2NTcyMDM1NTEsIm1lbUlkIjoidGVzdCJ9.JAlKrkQ1G6-PDF0fibW83BdXdZQu1Wn1VcCqWvSLexw
 apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@363fe7be
 AuthFilter:CONTINUE
+Error: Unable to access jarfile workspace/BaeGongPa/Build/libs/[fileName].jar
+Error: Unable to access jarfile workspace/BaeGongPa/Build/libs/[fileName].jar
+Error: Unable to access jarfile workspace/BaeGongPa/Build/libs/[fileName].jar
+Error: Unable to access jarfile workspace/BaeGongPa/Build/libs/[fileName].jar
+2022-07-07 15:01:40.228  INFO 8450 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-07 15:01:45.650  INFO 8450 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-07-07 15:01:47.127  INFO 8450 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+Error: Unable to access jarfile workspace/BaeGongPa/Build/libs/[fileName].jar
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.1)
+
+2022-07-07 15:04:33.929  INFO 13121 --- [           main] c.e.BaeGongPaServer.MinApplication       : Starting MinApplication using Java 11.0.15 on goorm with PID 13121 (/workspace/BaeGongPaServer/build/libs/BaeGongPaServer-0.0.1-SNAPSHOT.jar started by root in /workspace/BaeGongPaServer)
+2022-07-07 15:04:34.019  INFO 13121 --- [           main] c.e.BaeGongPaServer.MinApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-07-07 15:04:51.230  INFO 13121 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-07 15:04:52.640  INFO 13121 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1299 ms. Found 8 JPA repository interfaces.
+2022-07-07 15:05:01.526  INFO 13121 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$59a88309] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-07 15:05:03.239  INFO 13121 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-07-07 15:05:10.122  INFO 13121 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-07 15:05:10.318  INFO 13121 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-07 15:05:10.319  INFO 13121 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-07 15:05:11.531  INFO 13121 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-07 15:05:11.533  INFO 13121 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 36711 ms
+2022-07-07 15:05:19.019  INFO 13121 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-07 15:05:19.825  INFO 13121 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-07 15:05:25.222  INFO 13121 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-07 15:05:27.618  INFO 13121 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-07 15:05:32.937  INFO 13121 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-07 15:05:33.425  INFO 13121 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-07 15:05:48.052  INFO 13121 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-07 15:05:48.256  INFO 13121 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-07 15:06:04.420  WARN 13121 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-07 15:06:12.720  INFO 13121 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@294aba23, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69909c14, org.springframework.security.web.context.SecurityContextPersistenceFilter@35b17c06, org.springframework.security.web.header.HeaderWriterFilter@29be997f, org.springframework.security.web.authentication.logout.LogoutFilter@4d157493, com.example.BaeGongPaServer.Filter.AuthFilter@5d3b58ca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9f674ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@448b808a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e224df5, org.springframework.security.web.session.SessionManagementFilter@23da79eb, org.springframework.security.web.access.ExceptionTranslationFilter@7c281eb8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@781711b7]
+2022-07-07 15:06:22.652  INFO 13121 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-07 15:06:22.926  INFO 13121 --- [           main] c.e.BaeGongPaServer.MinApplication       : Started MinApplication in 120.285 seconds (JVM running for 131.48)
+2022-07-07 15:09:24.841  INFO 13121 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-07 15:09:24.843  INFO 13121 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-07 15:09:24.924  INFO 13121 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 81 ms
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Thu Jul 07 15:09:29 UTC 2022,Expiration: 1657210169417
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjEwMTY5LCJpYXQiOjE2NTcyMDY1NjksIm1lbUlkIjoidGVzdCJ9.D7aKsueHlVKPREe9zMbo9U-NWaEwXc24CqPaT9iUAuk
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@c37a66
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Thu Jul 07 15:10:40 UTC 2022,Expiration: 1657210240349
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjEwMjQwLCJpYXQiOjE2NTcyMDY2NDAsIm1lbUlkIjoidGVzdCJ9.bBkrjWn1iTjFLNvGiTtG-0BpcLGUK9JoYRPJ9abMH7Q
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@6839dd86
+AuthFilter:CONTINUE
+AuthFilter:Authentication = eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjEwMjQwLCJpYXQiOjE2NTcyMDY2NDAsIm1lbUlkIjoidGVzdCJ9.bBkrjWn1iTjFLNvGiTtG-0BpcLGUK9JoYRPJ9abMH7Q
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+Hibernate: 
+    insert 
+    into
+        mem_photo
+        (ins_date, mem_no, photo_file, photo_path, photo_size, photo_type) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+Hibernate: 
+    update
+        mem_info 
+    set
+        mem_pf_photo=? 
+    where
+        mem_no=?
+apiResponsecom.example.BaeGongPaServer.Component.ApiResponse@34385668
+AuthFilter:CONTINUE
+AuthFilter:Authentication = eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjEwMjQwLCJpYXQiOjE2NTcyMDY2NDAsIm1lbUlkIjoidGVzdCJ9.bBkrjWn1iTjFLNvGiTtG-0BpcLGUK9JoYRPJ9abMH7Q
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+Hibernate: 
+    insert 
+    into
+        mem_photo
+        (ins_date, mem_no, photo_file, photo_path, photo_size, photo_type) 
+    values
+        (?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+Hibernate: 
+    update
+        mem_info 
+    set
+        mem_pf_photo=? 
+    where
+        mem_no=?
+apiResponsecom.example.BaeGongPaServer.Component.ApiResponse@152b380
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Fri Jul 08 03:40:28 UTC 2022,Expiration: 1657255228288
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjU1MjI4LCJpYXQiOjE2NTcyNTE2MjgsIm1lbUlkIjoidGVzdCJ9.s-__YwUF_G66QSreoWmKD8YSy9lKp3iSYd3cH1KNuyM
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@1314042b
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Fri Jul 08 03:41:05 UTC 2022,Expiration: 1657255265817
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MjU1MjY1LCJpYXQiOjE2NTcyNTE2NjUsIm1lbUlkIjoidGVzdCJ9.3TnsKyB1KY5FLeDdtuHfG0Gful0Uttw4zFdiTrDJkT4
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@1feeddd2
+AuthFilter:CONTINUE
+2022-07-08 06:36:30.260  INFO 13121 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-08 06:36:30.337  INFO 13121 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-07-08 06:36:30.439  INFO 13121 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
