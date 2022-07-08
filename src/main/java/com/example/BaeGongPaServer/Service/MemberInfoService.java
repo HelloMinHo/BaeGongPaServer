@@ -64,7 +64,6 @@ public class MemberInfoService {
 
         MemInfo memInfo = memInfoRepository.findByMemId(authUserDAO.getMemId());
         memInfo.setMemPfPhoto(photoName);
-        memInfoRepository.findByMemId(authUserDAO.getMemId());
         MemInfo rst = memInfoRepository.save(memInfo);
 
         if (rst == null) {
