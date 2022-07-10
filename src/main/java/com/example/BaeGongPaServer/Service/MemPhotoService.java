@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +27,7 @@ public class MemPhotoService {
         memPhoto.setPhotoType(memPhotoDto.getPhotoType());
         memPhoto.setPhotoFile(memPhotoDto.getPhotoFile());
         memPhoto.setPhotoSize(memPhotoDto.getPhotoSize());
-        memPhoto.setInsDate(Instant.now());
+        memPhoto.setInsDate(LocalDateTime.now());
         MemPhoto rst = memPhotoRepository.save(memPhoto);
 
         ApiResponse apiResponse = new ApiResponse();

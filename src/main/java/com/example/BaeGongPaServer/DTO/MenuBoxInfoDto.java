@@ -3,7 +3,7 @@ package com.example.BaeGongPaServer.DTO;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 public class MenuBoxInfoDto implements Serializable {
@@ -12,6 +12,6 @@ public class MenuBoxInfoDto implements Serializable {
     private final String menuBoxSub;
     private final Integer menuCnt;
     private final RoomInfoDto roomNo;
-    private final Instant insDate;
-    private final Instant updDate;
+    private final LocalDateTime insDate;
+    private final LocalDateTime updDate;
 }

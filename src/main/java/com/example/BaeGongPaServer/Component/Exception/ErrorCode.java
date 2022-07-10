@@ -1,4 +1,4 @@
-package com.example.BaeGongPaServer.Component;
+package com.example.BaeGongPaServer.Component.Exception;
 
 public enum ErrorCode {
 

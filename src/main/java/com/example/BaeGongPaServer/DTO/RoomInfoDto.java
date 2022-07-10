@@ -4,7 +4,7 @@ import com.example.BaeGongPaServer.Domain.MemInfo;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 public class RoomInfoDto implements Serializable {

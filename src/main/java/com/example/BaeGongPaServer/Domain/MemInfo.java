@@ -1,11 +1,12 @@
 package com.example.BaeGongPaServer.Domain;
 
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -17,45 +18,46 @@ import java.util.Set;
 public class MemInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "mem_no", nullable = false)
+    @Column(name = "mem_no")
     private Long memNo;
 
-    @Column(name = "mem_id", nullable = false)
+    @Column(name = "mem_id")
     private String memId;
 
-    @Column(name = "mem_pwd", nullable = false)
+    @Column(name = "mem_pwd")
     private String memPwd;
 
-    @Column(name = "mem_nick", nullable = false, length = 100)
+    @Column(name = "mem_nick", length = 100)
     private String memNick;
 
-    @Column(name = "mem_bg_photo", nullable = false)
+    @Column(name = "mem_bg_photo")
     private String memBgPhoto;
 
-    @Column(name = "mem_pf_photo", nullable = false)
+    @Column(name = "mem_pf_photo")
     private String memPfPhoto;
 
-    @Column(name = "mem_roll", nullable = false)
+    @Column(name = "mem_roll")
     private Integer memRoll;
 
-    @Column(name = "auth_slct", nullable = false)
+    @Column(name = "auth_slct")
     private String authSlct;
 
-    @Column(name = "auth_phone", nullable = false, length = 20)
+    @Column(name = "auth_phone", length = 20)
     private String authPhone;
 
-    @Column(name = "auth_name", nullable = false, length = 20)
+    @Column(name = "auth_name", length = 20)
     private String authName;
 
-    @Column(name = "auth_date", nullable = false)
-    private Instant authDate;
+    @Column(name = "auth_date")
+    private LocalDateTime authDate;
 
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
+    @Column(name = "ins_date")
+    private LocalDateTime insDate;
 
-    @Column(name = "upd_date", nullable = false)
-    private Instant updDate;
+    @Column(name = "upd_date")
+    private LocalDateTime updDate;
 
 
-
+    public MemInfo() {
+    }
 }

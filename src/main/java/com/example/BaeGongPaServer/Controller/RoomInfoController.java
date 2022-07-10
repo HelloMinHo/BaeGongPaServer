@@ -1,23 +1,15 @@
 package com.example.BaeGongPaServer.Controller;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
-import com.example.BaeGongPaServer.Component.Result;
 import com.example.BaeGongPaServer.DTO.RoomInfoDto;
 import com.example.BaeGongPaServer.Domain.RoomInfo;
 import com.example.BaeGongPaServer.Service.RoomInfoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
-import java.util.Date;
-import java.util.HashMap;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +18,7 @@ import java.util.Map;
 public class RoomInfoController {
 
     private final RoomInfoService roomInfoService;
+    private ApiResponse apiResponse = new ApiResponse();
 
 
     @RequestMapping(value = "/room/create", method = RequestMethod.POST)
@@ -49,22 +42,14 @@ public class RoomInfoController {
     }
 
     @RequestMapping(value = "/room/allRoomList", method = RequestMethod.GET)
-    public ApiResponse getAllRoomList(@RequestBody Map<String, Object> params) {
+    public ApiResponse getAllRoomList(@RequestParam Map<String, String> params) {
 
-        System.out.println(params.get("stDate"));
-        System.out.println(params.get("enDate"));
-        System.out.println(Instant.parse(params.get("stDate").toString()));
-
-        //System.out.println(Instant.parse("stDate : " + params.get("stDate").toString()));
-        //System.out.println(Instant.parse("enDate : " + params.get("enDate").toString()));
-        Instant stDate = Instant.parse(params.get("stDate").toString());
-        Instant enDate = Instant.parse(params.get("enDate").toString());
-        //return roomInfoService.getAllRoomList(stDate, enDate);
-
+        LocalDateTime stDate = LocalDateTime.parse(params.get("stDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        LocalDateTime enDate = LocalDateTime.parse(params.get("enDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         return roomInfoService.getAllRoomList(stDate, enDate);
-    }
 
+    }
 
 
 }

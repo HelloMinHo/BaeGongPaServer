@@ -6,7 +6,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "room_mem_info")
@@ -17,23 +17,24 @@ import java.time.Instant;
 public class RoomMemInfo {
 
     @Id
-    @Column(name = "room_no", nullable = false)
+    @Column(name = "room_no")
     private Long roomNo;
 
     @Id
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "mem_no", nullable = false)
+    @JoinColumn(name = "mem_no")
     private MemInfo memNo;
 
 
-    @Column(name = "order_cnt", nullable = false)
+    @Column(name = "order_cnt")
     private Integer orderCnt;
 
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
+    @Column(name = "ins_date")
+    private LocalDateTime insDate;
 
-    @Column(name = "upd_date", nullable = false)
-    private Instant updDate;
+    @Column(name = "upd_date")
+    private LocalDateTime updDate;
+
 
 
 }

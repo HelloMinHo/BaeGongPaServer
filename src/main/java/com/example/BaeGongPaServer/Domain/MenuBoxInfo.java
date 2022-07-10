@@ -5,7 +5,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -17,26 +17,26 @@ import java.util.Set;
 public class MenuBoxInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "menu_box_no", nullable = false)
+    @Column(name = "menu_box_no")
     private Long id;
 
-    @Column(name = "menu_box_name", nullable = false, length = 50)
+    @Column(name = "menu_box_name", length = 50)
     private String menuBoxName;
 
-    @Column(name = "menu_box_sub", nullable = false, length = 50)
+    @Column(name = "menu_box_sub", length = 50)
     private String menuBoxSub;
 
-    @Column(name = "menu_cnt", nullable = false)
+    @Column(name = "menu_cnt")
     private Integer menuCnt;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "room_no", nullable = false)
+    @JoinColumn(name = "room_no")
     private RoomInfo roomNo;
 
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
+    @Column(name = "ins_date")
+    private LocalDateTime insDate;
 
-    @Column(name = "upd_date", nullable = false)
-    private Instant updDate;
+    @Column(name = "upd_date")
+    private LocalDateTime updDate;
 
 }

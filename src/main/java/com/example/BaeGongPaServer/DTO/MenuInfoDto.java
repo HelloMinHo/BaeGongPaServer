@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 public class MenuInfoDto implements Serializable {
@@ -12,6 +12,6 @@ public class MenuInfoDto implements Serializable {
     private final String menuSub;
     private final BigDecimal menuPrice;
     private final MenuBoxInfoDto menuBoxNo;
-    private final Instant insDate;
-    private final Instant updDate;
+    private final LocalDateTime insDate;
+    private final LocalDateTime updDate;
 }
