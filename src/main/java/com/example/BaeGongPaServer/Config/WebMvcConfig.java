@@ -11,8 +11,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);
 
-        //registry.addResourceHandler("/img/**").addResourceLocations("file:///workspace/assets/img/");
-        registry.addResourceHandler("/img/**").addResourceLocations("file:///D:/img/");
+        registry.addResourceHandler("/img/**").addResourceLocations("file:///workspace/assets/img/");
+        //registry.addResourceHandler("/img/**").addResourceLocations("file:///D:/img/");
 
     }
 

@@ -38,7 +38,7 @@ public class MemPhotoService {
         } else {
             apiResponse.setCode(200);
             apiResponse.setMessage("사진등록 성공");
-            apiResponse.setResultValue("data", rst.getPhotoNo() + " / " + rst.getPhotoPath() + rst.getPhotoFile());
+            apiResponse.setResultValue("data", rst.getPhotoPath() + rst.getPhotoFile());
 
         }
 

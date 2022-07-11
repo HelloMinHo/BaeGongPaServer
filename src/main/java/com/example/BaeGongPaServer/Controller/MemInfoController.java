@@ -51,12 +51,9 @@ public class MemInfoController {
 
             if ("png|jpg|jpeg|".contains(fileType)) {
 
-                String filePath = "D:/img/";
-                //String filePath = "/workspace/assets/img/" ;
-                // String filePath = System.getProperty("user.dir") + "/Assets/photo/";
+                String filePath = "img/";
                 String fileName = uuid + "." + fileType;
                 String fileSize = file.getSize() + "";
-                System.out.println("filePath + fileName : " + filePath + fileName);
 
                 file.transferTo(new File(filePath + fileName));
                 memInfoService.InsMemPfPhoto(filePath + fileName);
@@ -67,8 +64,6 @@ public class MemInfoController {
         } catch (IOException e) {
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
-        } finally {
-
         }
 
         return apiResponse;
