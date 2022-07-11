@@ -14,6 +14,7 @@ import java.util.List;
 public class RoomMemInfoService {
 
     private final RoomMemInfoRepository roomMemInfoRepository;
+    private ApiResponse apiResponse = new ApiResponse();
 
     public ApiResponse getRoomMemInfo(Long roomNo) {
 
@@ -21,29 +22,31 @@ public class RoomMemInfoService {
 //        roomInfo.setId(roomNo);
         List<RoomMemInfo> rst = roomMemInfoRepository.findByRoomNo(roomNo);
 
-        if (rst == null) {
-            System.out.println("RoomMemInfo IS NULL");
+        if (rst.size() > 0) {
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 호출 성공");
 
-            return new ApiResponse(401, null, "방 호출 실패");
         } else {
-            System.out.println("RoomMemInfo : " + rst);
-            System.out.println("roomNo : " + roomNo);
-            return new ApiResponse(200, rst, "방 호출 성공");
+            apiResponse.setCode(401);
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 호출 성공");
         }
+        return apiResponse;
     }
 
     public ApiResponse createRoomMemInfo(RoomMemInfo roomMemInfo) {
 
         RoomMemInfo rst = roomMemInfoRepository.save(roomMemInfo);
-        if (rst == null) {
-            System.out.println("roomMemInfo IS NULL");
+        if (rst != null) {
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 호출 성공");
 
-            return new ApiResponse(401, null, "방 입장 실패");
         } else {
-            System.out.println("roomMemInfo : " + rst);
-            System.out.println("roomNo : " + rst.getRoomNo());
-            return new ApiResponse(200, rst, "방 입장 성공");
+            apiResponse.setCode(401);
+            apiResponse.setResultValue("data", null);
+            apiResponse.setMessage("방 호출 성공");
         }
+        return apiResponse;
     }
 
 }

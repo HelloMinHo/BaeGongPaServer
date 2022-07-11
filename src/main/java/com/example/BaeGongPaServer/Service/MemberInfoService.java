@@ -2,7 +2,6 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
-import com.example.BaeGongPaServer.DTO.MemInfoDto;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 
 import com.example.BaeGongPaServer.Repository.MemInfoRepository;
@@ -10,8 +9,8 @@ import com.example.BaeGongPaServer.Repository.MemInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
 
 @Service
 @RequiredArgsConstructor
@@ -19,46 +18,29 @@ public class MemberInfoService {
 
     private final MemInfoRepository memInfoRepository;
 
-    public ApiResponse createMemInfo(MemInfoDto memInfoDto) {
-        ApiResponse apiResponse = new ApiResponse();
-        MemInfo memInfo = new MemInfo();
-        memInfo.setMemId(memInfoDto.getMemId());
-        memInfo.setMemNick(memInfoDto.getMemNick());
-        memInfo.setMemPwd(memInfoDto.getMemPwd());
-        memInfo.setMemBgPhoto(memInfoDto.getMemBgPhoto());
-        memInfo.setMemPfPhoto(memInfoDto.getMemPfPhoto());
-        memInfo.setMemRoll(0);
-        memInfo.setAuthDate(Instant.now());
-        memInfo.setInsDate(Instant.now());
-        memInfo.setUpdDate(Instant.now());
+    ApiResponse apiResponse = new ApiResponse();
 
-        //
-        memInfo.setAuthName("");
-        memInfo.setAuthPhone("");
-        memInfo.setAuthSlct("");
+    public ApiResponse createMemInfo(MemInfo memInfo) {
 
-
-        MemInfo rst = memInfoRepository.save(memInfo);
-
-        if (rst == null) {
-            apiResponse.setCode(401);
-            apiResponse.setMessage("회원가입 실패");
-            apiResponse.setResultValue("data", "");
+        if (memInfo.getMemId().replace(" ", "").isEmpty()) {
+            apiResponse.setMessage("아이디를 입력해주세요.");
+        } else if (memInfo.getMemPwd().replace(" ", "").isEmpty()) {
+            apiResponse.setMessage("패스워드를 입력해주세요.");
+        } else if (memInfo.getMemNick().replace(" ", "").isEmpty()) {
+            apiResponse.setMessage("닉네임을 입력해주세요.");
         } else {
+            MemInfo rst = memInfoRepository.save(memInfo);
+
             apiResponse.setCode(200);
-            apiResponse.setMessage("회원가입 성공");
-            apiResponse.setResultValue("data", rst.getMemId() + " / " + rst.getMemNo());
-
+            apiResponse.setResultValue("data",rst);
+            apiResponse.setResultValue("data2",rst);
+            apiResponse.setMessage("회원가입이 완료되었습니다.");
         }
-
         return apiResponse;
-
-
     }
 
+    @Transactional
     public ApiResponse InsMemPfPhoto(String photoName) {
-
-        ApiResponse apiResponse = new ApiResponse();
 
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 

@@ -1,6 +1,7 @@
 package com.example.BaeGongPaServer.Config;
 
 import com.example.BaeGongPaServer.Auth.AuthProvider;
+import com.example.BaeGongPaServer.Component.Exception.ExceptionHandlerFilter;
 import com.example.BaeGongPaServer.Filter.AuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/test**","/test/**","/sign**").permitAll()
+                .antMatchers("/test**", "/test/**", "/sign**").permitAll()
                 .antMatchers("/user/**").hasAnyRole("ADMIN")
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .addFilterBefore(new AuthFilter(authProvider), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new AuthFilter(authProvider), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new ExceptionHandlerFilter(), AuthFilter.class);
+
 
     }
 }

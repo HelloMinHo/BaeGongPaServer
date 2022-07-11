@@ -13,6 +13,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 
 
@@ -26,34 +27,35 @@ public class AuthController {
 
 
     @RequestMapping(value = "/signIn", method = RequestMethod.POST)
-    public ApiResponse signUp(@RequestBody AuthDTO authDTO) {
+    public ApiResponse signUp(@ModelAttribute AuthDTO authDTO) {
         ApiResponse apiResponse = authService.memberLogin(authDTO);
-
-
-
-        System.out.println("apiResponse : " + apiResponse);
-
+        System.out.println("로그인 성공");
         return apiResponse;
     }
 
 
     @RequestMapping(value = "/signUp/photo", method = RequestMethod.POST)
-    public ApiResponse regPhoto(@RequestBody MemPhotoDto memPhotoDto) {
+    public ApiResponse regPhoto(@ModelAttribute MemPhotoDto memPhotoDto) {
 
         ApiResponse apiResponse = memPhotoService.InsMemPhoto(memPhotoDto);
 
-        memInfoService.InsMemPfPhoto(memPhotoDto.getPhotoPath()+memPhotoDto.getPhotoFile());
+        memInfoService.InsMemPfPhoto(memPhotoDto.getPhotoPath() + memPhotoDto.getPhotoFile());
         System.out.println("apiResponse" + apiResponse);
 
         return apiResponse;
     }
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public ApiResponse signIn(@RequestBody MemInfoDto memInfoDto) {
-        ApiResponse apiResponse = memInfoService.createMemInfo(memInfoDto);
-        System.out.println("apiResponse" + apiResponse);
+    public ApiResponse signIn(@ModelAttribute MemInfoDto memInfoDto) {
 
-        return apiResponse;
+        MemInfo memInfo = new MemInfo();
+        memInfo.setMemId(memInfoDto.getMemId());
+        memInfo.setMemNick(memInfoDto.getMemNick());
+        memInfo.setMemPwd(memInfoDto.getMemPwd());
+        memInfo.setInsDate(LocalDateTime.now());
+        memInfo.setUpdDate(LocalDateTime.now());
+
+        return memInfoService.createMemInfo(memInfo);
     }
 
     @RequestMapping(value = "/user/roomList", method = RequestMethod.POST)

@@ -1,7 +1,6 @@
 package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
-import com.example.BaeGongPaServer.Component.Result;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
 import com.example.BaeGongPaServer.DTO.RoomInfoDto;
 import com.example.BaeGongPaServer.Domain.MemInfo;
@@ -9,42 +8,32 @@ import com.example.BaeGongPaServer.Domain.RoomInfo;
 import com.example.BaeGongPaServer.Repository.RoomInfoRepository;
 import lombok.RequiredArgsConstructor;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class RoomInfoService {
 
     private final RoomInfoRepository roomInfoRepository;
-
-
+    private ApiResponse apiResponse = new ApiResponse();
 
     // 전체 방 목록
-    public ApiResponse getAllRoomList(Instant stDate, Instant enDate) {
-
+    public ApiResponse getAllRoomList(LocalDateTime stDate, LocalDateTime enDate) {
         List<RoomInfo> rst = roomInfoRepository.findByInsDateBetween(stDate, enDate);
-
-        if (rst.size() == 0) {
-            System.out.println("RoomList IS NULL");
-
-            return new ApiResponse(401, null, "방 호출 실패");
+        if (rst.size() > 0) {
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 리스트 성공");
         } else {
-            System.out.println("RoomList : " + rst);
-            System.out.println("HostMemNo : " + rst.get(0).getHostMemNo().getMemNo());
-            return new ApiResponse(200, rst, "방 호출 성공");
+            apiResponse.setCode(401);
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 리스트 실패");
         }
+        return apiResponse;
     }
 
     // 나의 방 목록
@@ -55,15 +44,15 @@ public class RoomInfoService {
         memInfo.setMemNo(authUserDAO.getMemNo());
         List<RoomInfo> rst = roomInfoRepository.findByHostMemNo(memInfo);
 
-        if (rst.size() == 0) {
-            System.out.println("RoomList IS NULL");
-
-            return new ApiResponse(401, null, "방 호출 실패");
+        if (rst.size() > 0) {
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 호출 성공");
         } else {
-            System.out.println("RoomList : " + rst);
-            System.out.println("HostMemNo : " + rst.get(0).getHostMemNo().getMemNo());
-            return new ApiResponse(200, rst, "방 호출 성공");
+            apiResponse.setCode(401);
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("방 호출 실패");
         }
+        return apiResponse;
     }
 
     // 방 생성
@@ -88,8 +77,8 @@ public class RoomInfoService {
                 , memInfo
                 , 0l
                 , roomInfoDto.getInviteCode()
-                , Instant.now()
-                , Instant.now()
+                , LocalDateTime.now()
+                , LocalDateTime.now()
         );
 
         RoomInfo rst = roomInfoRepository.save(roomInfo);

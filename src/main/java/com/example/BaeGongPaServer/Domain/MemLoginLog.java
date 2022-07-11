@@ -4,7 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "mem_login_log")
@@ -14,14 +14,14 @@ public class MemLoginLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "auto_no", nullable = false)
+    @Column(name = "auto_no")
     private Long autoNo;
 
-    @Column(name = "mem_no", nullable = false)
+    @Column(name = "mem_no")
     private Long memNo;
 
-    @Column(name = "ins_date", nullable = false)
-    private Instant insDate;
+    @Column(name = "ins_date")
+    private LocalDateTime insDate;
 
 
 }

@@ -3,7 +3,7 @@ package com.example.BaeGongPaServer.DTO;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 public class MemInfoDto implements Serializable {

@@ -70,34 +70,15 @@ public class MemInfoController {
         return apiResponse;
     }
 //
+//
+//    // 회원가입
 //    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-//    public ApiResponse signIn(@RequestBody MemInfoDto memInfoDto) {
+//    public ApiResponse signIn(@ModelAttribute MemInfoDto memInfoDto) {
+//
 //        ApiResponse apiResponse = memInfoService.createMemInfo(memInfoDto);
 //        System.out.println("apiResponse" + apiResponse);
 //
 //        return apiResponse;
 //    }
-//
-//    @RequestMapping(value = "/user/roomList", method = RequestMethod.POST)
-//    public ApiResponse userRoomList(@AuthenticationPrincipal UserDetails userDetails, @RequestParam HashMap<String, String> params) {
-//
-//        System.out.println("getUsername : " + userDetails.getUsername());
-//        System.out.println("getPassword : " + userDetails.getPassword());
-////        ApiResponse apiResponse = memInfoService.createMemInfo(memInfoDTO);
-//        System.out.println("params : " + params);
-//
-//
-//        return null;
-//    }
-//
-//    @RequestMapping(value = "/roomList", method = RequestMethod.POST)
-//    public ApiResponse allRoomList(@AuthenticationPrincipal UserDetails userDetails, @RequestParam HashMap<String, String> params) {
-//
-//        System.out.println("getUsername : " + userDetails.getUsername());
-//        System.out.println("getPassword : " + userDetails.getPassword());
-////        ApiResponse apiResponse = memInfoService.createMemInfo(memInfoDTO);
-//
-//
-//        return null;
-//    }
+
 }

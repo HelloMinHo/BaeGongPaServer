@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -20,27 +20,25 @@ public class AuthService {
     private final MemInfoRepository memInfoRepository;
     private final MemLoginLogRepository memLoginLogRepository;
 
+    ApiResponse apiResponse = new ApiResponse();
 
     @Transactional
     public ApiResponse memberLogin(AuthDTO authDTO) {
-
-        System.out.println(authDTO.getMemId() + " / " + authDTO.getMemPwd());
         MemInfo memInfo = memInfoRepository.findByMemIdAndMemPwd(authDTO.getMemId(), authDTO.getMemPwd());
-        ApiResponse apiResponse = new ApiResponse();
 
         if (memInfo == null) {
             apiResponse.setCode(401);
-            apiResponse.setMessage("로그인 실패");
-            apiResponse.setResultValue("Token", null);
+            apiResponse.setMessage("이메일 또는 비밀번호를 확인해주세요.");
+            apiResponse.setResultValue("Token", "");
         } else {
             MemLoginLog memLoginLog = new MemLoginLog();
             memLoginLog.setMemNo(memInfo.getMemNo());
-            memLoginLog.setInsDate(Instant.now());
+            memLoginLog.setInsDate(LocalDateTime.now());
             memLoginLogRepository.save(memLoginLog);
 
             apiResponse.setCode(200);
-            apiResponse.setMessage("로그인 성공");
-            apiResponse.setResultValue("Token", authProvider.createToken(authDTO));
+            apiResponse.setMessage("로그인되었습니다.");
+            apiResponse.setResultValue("Token", authProvider.createAccessToken(authDTO));
         }
 
         return apiResponse;
