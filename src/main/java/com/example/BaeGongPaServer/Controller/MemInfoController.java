@@ -8,6 +8,7 @@ import com.example.BaeGongPaServer.Service.AuthService;
 import com.example.BaeGongPaServer.Service.MemPhotoService;
 import com.example.BaeGongPaServer.Service.MemberInfoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
@@ -49,11 +50,14 @@ public class MemInfoController {
             String fileType = file.getContentType().substring(file.getContentType().indexOf("/") + 1);
 
             if ("png|jpg|jpeg|".contains(fileType)) {
-                String filePath = System.getProperty("user.dir") + "/Assets/photo/";
+
+                String filePath = "D:/img/";
+                //String filePath = "/workspace/assets/img/" ;
+                // String filePath = System.getProperty("user.dir") + "/Assets/photo/";
                 String fileName = uuid + "." + fileType;
                 String fileSize = file.getSize() + "";
-
                 System.out.println("filePath + fileName : " + filePath + fileName);
+
                 file.transferTo(new File(filePath + fileName));
                 memInfoService.InsMemPfPhoto(filePath + fileName);
                 MemPhotoDto memPhotoDto = new MemPhotoDto("a", filePath, fileName, fileSize, 0l);
