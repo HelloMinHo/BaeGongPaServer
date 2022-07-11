@@ -2939,3 +2939,408 @@ Hibernate:
     values
         (?, ?, ?, ?, ?, ?)
 AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 08:08:24 UTC 2022,Expiration: 1657357704431
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzU3NzA0LCJpYXQiOjE2NTczNTQxMDQsIm1lbUlkIjoidGVzdCJ9.boCS5uXhjcZXbmbYK8Rbl_2f8A94Jodi5HkC3qAL2qE
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@3f418302
+AuthFilter:CONTINUE
+8e7c26d9@b2b67.com / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 08:08:37 UTC 2022,Expiration: 1657357717361
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzU3NzE3LCJpYXQiOjE2NTczNTQxMTcsIm1lbUlkIjoiOGU3YzI2ZDlAYjJiNjcuY29tIn0.spsJITRm2nGaByjSyb0PkzFg58RqbZL22-6xv0MVfIM
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@71ee371b
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-09 11:01:24.742  WARN 21602 --- [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-09 11:01:57.536  WARN 21602 --- [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-09 11:02:13.217  WARN 21602 --- [nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.example.BaeGongPaServer.Component.ApiResponse com.example.BaeGongPaServer.Controller.AuthController.signUp(com.example.BaeGongPaServer.DTO.AuthDTO)]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+2022-07-09 11:02:21.162  WARN 21602 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+AuthFilter:CONTINUE
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 11:02:26 UTC 2022,Expiration: 1657368146532
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzY4MTQ2LCJpYXQiOjE2NTczNjQ1NDYsIm1lbUlkIjoidGVzdCJ9.ELqVYDOZJH7XOrqtH69lsRfJljzp4vGN-ecZryy7QdM
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@5bf3602d
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 17:35:58 UTC 2022,Expiration: 1657391758036
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzkxNzU4LCJpYXQiOjE2NTczODgxNTgsIm1lbUlkIjoidGVzdCJ9.ovfw4lnwvJeA2TPhzmHG5C6TauBOnsh688IXh8hWdf4
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@7189d8b7
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 17:35:58 UTC 2022,Expiration: 1657391758954
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzkxNzU4LCJpYXQiOjE2NTczODgxNTgsIm1lbUlkIjoidGVzdCJ9.ovfw4lnwvJeA2TPhzmHG5C6TauBOnsh688IXh8hWdf4
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@bab46d0
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 17:36:03 UTC 2022,Expiration: 1657391763134
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzkxNzYzLCJpYXQiOjE2NTczODgxNjMsIm1lbUlkIjoidGVzdCJ9.WpXKOdDRinb-iiCcRIqgw-Tqi8Ce90TCfps0GgUFPRE
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@41db6a7e
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 17:36:04 UTC 2022,Expiration: 1657391764621
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzkxNzY0LCJpYXQiOjE2NTczODgxNjQsIm1lbUlkIjoidGVzdCJ9.71Ju3_f7QtXeeyZwX9op7uUDG90h43EuEZWSOOYbv0U
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@fff46e
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 17:36:09 UTC 2022,Expiration: 1657391769035
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzkxNzY5LCJpYXQiOjE2NTczODgxNjksIm1lbUlkIjoidGVzdCJ9.Mh-EFBg60nDHmiI-SpuT5wii_pKaINtTn-dJ4AGhwxQ
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@190e4076
+AuthFilter:CONTINUE
+test / asdf
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+SecretKey : minho
+Date : Sat Jul 09 17:36:09 UTC 2022,Expiration: 1657391769136
+Token:eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjU3MzkxNzY5LCJpYXQiOjE2NTczODgxNjksIm1lbUlkIjoidGVzdCJ9.Mh-EFBg60nDHmiI-SpuT5wii_pKaINtTn-dJ4AGhwxQ
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@593401b
+AuthFilter:CONTINUE
+test / asd
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@5d3baf63
+AuthFilter:CONTINUE
+test / asd
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@49858fd6
+AuthFilter:CONTINUE
+test / asd
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@10555750
+AuthFilter:CONTINUE
+test / asd
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@3f192f10
+AuthFilter:CONTINUE
