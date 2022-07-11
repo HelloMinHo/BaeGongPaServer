@@ -3344,3 +3344,570 @@ Hibernate:
         and meminfo0_.mem_pwd=?
 apiResponse : com.example.BaeGongPaServer.Component.ApiResponse@3f192f10
 AuthFilter:CONTINUE
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.1)
+
+2022-07-11 02:21:34.525  INFO 25031 --- [           main] c.e.BaeGongPaServer.MinApplication       : Starting MinApplication using Java 11.0.15 on goorm with PID 25031 (/workspace/BaeGongPaServer/build/libs/BaeGongPaServer-0.0.1-SNAPSHOT.jar started by root in /workspace/BaeGongPaServer)
+2022-07-11 02:21:34.536  INFO 25031 --- [           main] c.e.BaeGongPaServer.MinApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-07-11 02:21:48.726  INFO 25031 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-11 02:21:50.118  INFO 25031 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1194 ms. Found 8 JPA repository interfaces.
+2022-07-11 02:21:56.935  INFO 25031 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$ae197987] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-11 02:21:58.324  INFO 25031 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-07-11 02:22:04.024  INFO 25031 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-11 02:22:04.129  INFO 25031 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-11 02:22:04.129  INFO 25031 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-11 02:22:05.422  INFO 25031 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-11 02:22:05.423  INFO 25031 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 29987 ms
+2022-07-11 02:22:11.927  INFO 25031 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-11 02:22:12.629  INFO 25031 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-11 02:22:15.322  INFO 25031 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-11 02:22:17.321  INFO 25031 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-11 02:22:22.434  INFO 25031 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-11 02:22:22.918  INFO 25031 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-11 02:22:36.922  INFO 25031 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-11 02:22:36.944  INFO 25031 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-11 02:22:48.126  WARN 25031 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-11 02:22:54.536  INFO 25031 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4ed9f7b1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d119405, org.springframework.security.web.context.SecurityContextPersistenceFilter@55f4887d, org.springframework.security.web.header.HeaderWriterFilter@5cf8676a, org.springframework.security.web.authentication.logout.LogoutFilter@342e690b, com.example.BaeGongPaServer.Component.Exception.ExceptionHandlerFilter@57e388c3, com.example.BaeGongPaServer.Filter.AuthFilter@20580d4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dbc408c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@456bcb74, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21bd128b, org.springframework.security.web.session.SessionManagementFilter@68b366e2, org.springframework.security.web.access.ExceptionTranslationFilter@7ab1127c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@72a2312e]
+2022-07-11 02:23:02.334  INFO 25031 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-11 02:23:02.624  INFO 25031 --- [           main] c.e.BaeGongPaServer.MinApplication       : Started MinApplication in 96.604 seconds (JVM running for 105.201)
+2022-07-11 02:28:56.519  INFO 25031 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 02:28:56.522  INFO 25031 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-11 02:28:56.525  INFO 25031 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+OncePerRequestFilter
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+2022-07-11 02:28:58.837 TRACE 25031 --- [nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [null]
+2022-07-11 02:28:58.838 TRACE 25031 --- [nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+??? ??
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+2022-07-11 02:29:23.544 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 02:29:23.546 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [asdf]
+2022-07-11 02:29:23.744 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 02:29:23.928 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 02:29:23.930 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 02:29:23.930 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 02:29:23.930 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 02:29:23.930 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 02:29:23.931 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 02:29:23.931 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 02:29:23.931 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 02:29:23.931 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 02:29:23.932 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 02:29:23.933 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 02:29:23.934 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+2022-07-11 02:29:24.431 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2022-07-11T02:29:24.036688]
+2022-07-11 02:29:24.433 TRACE 25031 --- [nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+AccessToken : 
+ DATE : Mon Jul 11 02:29:24 UTC 2022
+ ExpirationDate : 1657510164627
+??? ??
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+2022-07-11 02:29:34.419 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 02:29:34.420 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [asdf]
+2022-07-11 02:29:34.423 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 02:29:34.424 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 02:29:34.424 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 02:29:34.425 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 02:29:34.425 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 02:29:34.426 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 02:29:34.426 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 02:29:34.427 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 02:29:34.428 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 02:29:34.428 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 02:29:34.428 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 02:29:34.429 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 02:29:34.429 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+2022-07-11 02:29:34.432 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2022-07-11T02:29:34.430889]
+2022-07-11 02:29:34.432 TRACE 25031 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+AccessToken : 
+ DATE : Mon Jul 11 02:29:34 UTC 2022
+ ExpirationDate : 1657510174521
+??? ??
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+Hibernate: 
+    insert 
+    into
+        mem_info
+        (ins_date, mem_id, mem_nick, mem_pwd, upd_date) 
+    values
+        (?, ?, ?, ?, ?)
+2022-07-11 02:30:30.918 TRACE 25031 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2022-07-11T02:30:30.629745]
+2022-07-11 02:30:30.919 TRACE 25031 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [99aa9@test.com112]
+2022-07-11 02:30:30.919 TRACE 25031 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Mandoo]
+2022-07-11 02:30:30.919 TRACE 25031 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [asdf]
+2022-07-11 02:30:30.919 TRACE 25031 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [2022-07-11T02:30:30.629828]
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+Hibernate: 
+    insert 
+    into
+        mem_info
+        (ins_date, mem_id, mem_nick, mem_pwd, upd_date) 
+    values
+        (?, ?, ?, ?, ?)
+2022-07-11 02:31:57.525 TRACE 25031 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2022-07-11T02:31:57.519124]
+2022-07-11 02:31:57.526 TRACE 25031 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [99aa9@test.com112]
+2022-07-11 02:31:57.526 TRACE 25031 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Mandoo]
+2022-07-11 02:31:57.527 TRACE 25031 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [asdf]
+2022-07-11 02:31:57.527 TRACE 25031 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [TIMESTAMP] - [2022-07-11T02:31:57.519133]
+2022-07-11 02:31:57.635  WARN 25031 --- [nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2022-07-11 02:31:57.635 ERROR 25031 --- [nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry '99aa9@test.com112' for key 'mem_id'
+2022-07-11 02:31:57.749 ERROR 25031 --- [nio-8080-exec-6] c.e.B.C.E.GlobalExceptionHandler         : handleException : could not execute statement; SQL [n/a]; constraint [mem_id]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+handleException : org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [mem_id]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+handleException : could not execute statement; SQL [n/a]; constraint [mem_id]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+2022-07-11 09:23:04.524 ERROR 25031 --- [nio-8080-exec-4] c.e.B.C.E.GlobalExceptionHandler         : handleException : Request method 'GET' not supported
+handleException : org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+handleException : Request method 'GET' not supported
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+2022-07-11 09:23:20.935 ERROR 25031 --- [nio-8080-exec-7] c.e.B.C.E.GlobalExceptionHandler         : handleException : Request method 'GET' not supported
+handleException : org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+handleException : Request method 'GET' not supported
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+2022-07-11 09:23:35.711 ERROR 25031 --- [nio-8080-exec-9] c.e.B.C.E.GlobalExceptionHandler         : handleException : Request method 'GET' not supported
+handleException : org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+handleException : Request method 'GET' not supported
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+OncePerRequestFilter
+ExceptionHandlerFilter END
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.1)
+
+2022-07-11 11:28:41.321  INFO 36401 --- [           main] c.e.BaeGongPaServer.MinApplication       : Starting MinApplication using Java 11.0.15 on goorm with PID 36401 (/workspace/BaeGongPaServer/build/libs/BaeGongPaServer-0.0.1-SNAPSHOT.jar started by root in /workspace/BaeGongPaServer)
+2022-07-11 11:28:41.325  INFO 36401 --- [           main] c.e.BaeGongPaServer.MinApplication       : No active profile set, falling back to 1 default profile: "default"
+2022-07-11 11:28:54.031  INFO 36401 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-11 11:28:55.720  INFO 36401 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1495 ms. Found 8 JPA repository interfaces.
+2022-07-11 11:29:03.336  INFO 36401 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9f08a6a9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-11 11:29:05.027  INFO 36401 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2022-07-11 11:29:11.123  INFO 36401 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-11 11:29:11.230  INFO 36401 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-11 11:29:11.231  INFO 36401 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-07-11 11:29:12.828  INFO 36401 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-11 11:29:12.828  INFO 36401 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 30707 ms
+2022-07-11 11:29:20.523  INFO 36401 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-11 11:29:21.527  INFO 36401 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-11 11:29:25.017  INFO 36401 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-11 11:29:27.128  INFO 36401 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-11 11:29:31.639  INFO 36401 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-11 11:29:32.032  INFO 36401 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-07-11 11:29:43.137  INFO 36401 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-11 11:29:43.232  INFO 36401 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-11 11:29:53.218  WARN 36401 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-11 11:29:59.325  INFO 36401 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@21bd128b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d0b05, org.springframework.security.web.context.SecurityContextPersistenceFilter@2dbc408c, org.springframework.security.web.header.HeaderWriterFilter@3520963d, org.springframework.security.web.authentication.logout.LogoutFilter@78ec89a6, com.example.BaeGongPaServer.Component.Exception.ExceptionHandlerFilter@4b432e53, com.example.BaeGongPaServer.Filter.AuthFilter@2b916808, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78d71df1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@dd4aec3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62f11ebb, org.springframework.security.web.session.SessionManagementFilter@10b687f2, org.springframework.security.web.access.ExceptionTranslationFilter@5cf8676a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d119405]
+2022-07-11 11:30:08.025  INFO 36401 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-11 11:30:08.132  INFO 36401 --- [           main] c.e.BaeGongPaServer.MinApplication       : Started MinApplication in 95.494 seconds (JVM running for 104.371)
+2022-07-11 11:30:19.330  INFO 36401 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-11 11:30:19.417  INFO 36401 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-11 11:30:19.421  INFO 36401 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+OncePerRequestFilter
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=? 
+        and meminfo0_.mem_pwd=?
+2022-07-11 11:31:43.418 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 11:31:43.418 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [asdf]
+2022-07-11 11:31:43.746 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 11:31:43.830 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:31:43.832 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 11:31:43.832 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 11:31:43.834 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 11:31:43.834 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:31:43.834 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 11:31:43.835 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 11:31:43.835 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 11:31:43.835 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 11:31:43.835 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 11:31:43.920 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 11:31:43.925 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+Hibernate: 
+    insert 
+    into
+        mem_login_log
+        (ins_date, mem_no) 
+    values
+        (?, ?)
+2022-07-11 11:31:44.448 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2022-07-11T11:31:44.138954]
+2022-07-11 11:31:44.451 TRACE 36401 --- [nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+AccessToken : 
+ DATE : Mon Jul 11 11:31:44 UTC 2022
+ ExpirationDate : 1657542704642
+??? ??
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+2022-07-11 11:31:57.524 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 11:31:57.527 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 11:31:57.528 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:31:57.528 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 11:31:57.529 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 11:31:57.529 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 11:31:57.529 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:31:57.530 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 11:31:57.530 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 11:31:57.530 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 11:31:57.530 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 11:31:57.530 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 11:31:57.530 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 11:31:57.531 TRACE 36401 --- [nio-8080-exec-5] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+2022-07-11 11:32:12.284 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 11:32:12.287 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 11:32:12.287 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:32:12.288 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 11:32:12.288 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 11:32:12.288 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 11:32:12.288 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:32:12.289 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 11:32:12.289 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 11:32:12.289 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 11:32:12.290 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 11:32:12.290 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 11:32:12.290 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 11:32:12.291 TRACE 36401 --- [nio-8080-exec-6] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+OncePerRequestFilter
+filePath + fileName : /workspace/BaeGongPaServer/Assets/photo/8245d1dc-6cb3-482c-983c-73ae762d48b2.jpeg
+java.io.FileNotFoundException: /workspace/BaeGongPaServer/Assets/photo/8245d1dc-6cb3-482c-983c-73ae762d48b2.jpeg (No such file or directory)
+2022-07-11 11:32:13.532 ERROR 36401 --- [nio-8080-exec-6] c.e.B.C.E.GlobalExceptionHandler         : handleException : java.io.IOException: java.io.FileNotFoundException: /workspace/BaeGongPaServer/Assets/photo/8245d1dc-6cb3-482c-983c-73ae762d48b2.jpeg (No such file or directory)
+handleException : java.lang.RuntimeException: java.io.IOException: java.io.FileNotFoundException: /workspace/BaeGongPaServer/Assets/photo/8245d1dc-6cb3-482c-983c-73ae762d48b2.jpeg (No such file or directory)
+handleException : java.io.IOException: java.io.FileNotFoundException: /workspace/BaeGongPaServer/Assets/photo/8245d1dc-6cb3-482c-983c-73ae762d48b2.jpeg (No such file or directory)
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+2022-07-11 11:32:49.538 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 11:32:49.552 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 11:32:49.553 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:32:49.622 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 11:32:49.622 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 11:32:49.622 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 11:32:49.622 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:32:49.623 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 11:32:49.623 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 11:32:49.623 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 11:32:49.623 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 11:32:49.623 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 11:32:49.624 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 11:32:49.645 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+OncePerRequestFilter
+filePath + fileName : /workspace/BaeGongPaServer/Assets/photo/dfd56d3a-d39a-444c-b00b-94b26e450fed.jpeg
+Hibernate: 
+    select
+        meminfo0_.mem_no as mem_no1_0_,
+        meminfo0_.auth_date as auth_dat2_0_,
+        meminfo0_.auth_name as auth_nam3_0_,
+        meminfo0_.auth_phone as auth_pho4_0_,
+        meminfo0_.auth_slct as auth_slc5_0_,
+        meminfo0_.ins_date as ins_date6_0_,
+        meminfo0_.mem_bg_photo as mem_bg_p7_0_,
+        meminfo0_.mem_id as mem_id8_0_,
+        meminfo0_.mem_nick as mem_nick9_0_,
+        meminfo0_.mem_pf_photo as mem_pf_10_0_,
+        meminfo0_.mem_pwd as mem_pwd11_0_,
+        meminfo0_.mem_roll as mem_rol12_0_,
+        meminfo0_.upd_date as upd_dat13_0_ 
+    from
+        mem_info meminfo0_ 
+    where
+        meminfo0_.mem_id=?
+2022-07-11 11:32:51.426 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [test]
+2022-07-11 11:32:51.436 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_no1_0_] : [BIGINT]) - [1]
+2022-07-11 11:32:51.437 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_dat2_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:32:51.437 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_nam3_0_] : [VARCHAR]) - []
+2022-07-11 11:32:51.437 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_pho4_0_] : [VARCHAR]) - []
+2022-07-11 11:32:51.438 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([auth_slc5_0_] : [VARCHAR]) - []
+2022-07-11 11:32:51.439 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([ins_date6_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+2022-07-11 11:32:51.440 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_bg_p7_0_] : [VARCHAR]) - []
+2022-07-11 11:32:51.440 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_id8_0_] : [VARCHAR]) - [test]
+2022-07-11 11:32:51.440 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_nick9_0_] : [VARCHAR]) - [minho2]
+2022-07-11 11:32:51.440 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pf_10_0_] : [VARCHAR]) - [D:\myproject\BaeGongPaServer/Assets/photo/db7777a5-00a4-4ce7-8204-66dc1d6c87e5.jpeg]
+2022-07-11 11:32:51.440 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_pwd11_0_] : [VARCHAR]) - [asdf]
+2022-07-11 11:32:51.440 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([mem_rol12_0_] : [INTEGER]) - [0]
+2022-07-11 11:32:51.441 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([upd_dat13_0_] : [TIMESTAMP]) - [2022-07-06T04:26:19]
+Hibernate: 
+    update
+        mem_info 
+    set
+        mem_pf_photo=? 
+    where
+        mem_no=?
+2022-07-11 11:32:52.326 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [/workspace/BaeGongPaServer/Assets/photo/dfd56d3a-d39a-444c-b00b-94b26e450fed.jpeg]
+2022-07-11 11:32:52.327 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+Hibernate: 
+    insert 
+    into
+        mem_photo
+        (ins_date, mem_no, photo_file, photo_path, photo_size, photo_type) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2022-07-11 11:32:52.618 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [2022-07-11T11:32:52.519125]
+2022-07-11 11:32:52.618 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+2022-07-11 11:32:52.619 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [dfd56d3a-d39a-444c-b00b-94b26e450fed.jpeg]
+2022-07-11 11:32:52.619 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [/workspace/BaeGongPaServer/Assets/photo/]
+2022-07-11 11:32:52.619 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [309704]
+2022-07-11 11:32:52.619 TRACE 36401 --- [nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [a]
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END
+OncePerRequestFilter
+OncePerRequestFilter
+ExceptionHandlerFilter END
+ExceptionHandlerFilter END

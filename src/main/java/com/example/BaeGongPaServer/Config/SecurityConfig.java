@@ -26,15 +26,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable();
 
-        http
-                .authorizeRequests()
-                .antMatchers("/test**", "/test/**", "/sign**").permitAll()
-                .antMatchers("/user/**").hasAnyRole("ADMIN")
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .addFilterBefore(new AuthFilter(authProvider), UsernamePasswordAuthenticationFilter.class)
-                .addFilterBefore(new ExceptionHandlerFilter(), AuthFilter.class);
+			 	http
+			 	.authorizeRequests()
+			 	.antMatchers("/img**", "/img/**").permitAll()
+			 	.antMatchers("/test**", "/test/**", "/sign**").permitAll()
+			 	.antMatchers("/user/**").hasAnyRole("ADMIN")
+			 	.antMatchers("/admin/**").hasAnyRole("ADMIN")
+			 	.anyRequest().authenticated()
+			 	.and()
+			 	.addFilterBefore(new AuthFilter(authProvider), UsernamePasswordAuthenticationFilter.class)
+			 	.addFilterBefore(new ExceptionHandlerFilter(), AuthFilter.class);
 
 
     }
