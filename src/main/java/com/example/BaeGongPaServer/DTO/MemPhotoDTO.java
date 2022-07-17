@@ -1,10 +1,9 @@
 package com.example.BaeGongPaServer.DTO;
 
-import com.example.BaeGongPaServer.Domain.MemInfo;
 import lombok.Data;
 
 @Data
-public class MemPhotoDto {
+public class MemPhotoDTO {
     private final String photoType;
     private final String photoPath;
     private final String photoFile;

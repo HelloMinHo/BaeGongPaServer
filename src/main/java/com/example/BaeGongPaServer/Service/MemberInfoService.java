@@ -6,6 +6,7 @@ import com.example.BaeGongPaServer.Domain.MemInfo;
 
 import com.example.BaeGongPaServer.Repository.MemInfoRepository;
 
+import com.example.BaeGongPaServer.Repository.MemSessRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class MemberInfoService {
 
     private final MemInfoRepository memInfoRepository;
+    private final MemSessRepository memSessRepository;
 
     ApiResponse apiResponse = new ApiResponse();
 
@@ -32,8 +34,8 @@ public class MemberInfoService {
             MemInfo rst = memInfoRepository.save(memInfo);
 
             apiResponse.setCode(200);
-            apiResponse.setResultValue("data",rst);
-            apiResponse.setResultValue("data2",rst);
+            apiResponse.setResultValue("data", rst);
+            apiResponse.setResultValue("data2", rst);
             apiResponse.setMessage("회원가입이 완료되었습니다.");
         }
         return apiResponse;
@@ -61,5 +63,25 @@ public class MemberInfoService {
         return apiResponse;
 
     }
+
+    @Transactional
+    public ApiResponse updateFcmToken(String fcmToken) {
+        AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        int res = memSessRepository.updateFcmTokenByMemNo(authUserDAO.getMemNo(), fcmToken);
+        if (res < 1) {
+            apiResponse.setCode(401);
+            apiResponse.setMessage("updateFcmToken 실패");
+            apiResponse.setResultValue("data", "");
+        } else {
+            apiResponse.setCode(200);
+            apiResponse.setMessage("updateFcmToken 성공");
+            apiResponse.setResultValue("data", res);
+
+
+        }
+        return apiResponse;
+    }
+
 
 }

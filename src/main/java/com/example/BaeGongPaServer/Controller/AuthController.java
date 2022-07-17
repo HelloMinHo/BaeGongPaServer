@@ -2,8 +2,8 @@ package com.example.BaeGongPaServer.Controller;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DTO.AuthDTO;
-import com.example.BaeGongPaServer.DTO.MemInfoDto;
-import com.example.BaeGongPaServer.DTO.MemPhotoDto;
+import com.example.BaeGongPaServer.DTO.MemInfoDTO;
+import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 import com.example.BaeGongPaServer.Service.AuthService;
 import com.example.BaeGongPaServer.Service.MemPhotoService;
@@ -35,7 +35,7 @@ public class AuthController {
 
 
     @RequestMapping(value = "/signUp/photo", method = RequestMethod.POST)
-    public ApiResponse regPhoto(@ModelAttribute MemPhotoDto memPhotoDto) {
+    public ApiResponse regPhoto(@ModelAttribute MemPhotoDTO memPhotoDto) {
 
         ApiResponse apiResponse = memPhotoService.InsMemPhoto(memPhotoDto);
 
@@ -46,7 +46,7 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public ApiResponse signIn(@ModelAttribute MemInfoDto memInfoDto) {
+    public ApiResponse signIn(@ModelAttribute MemInfoDTO memInfoDto) {
 
         MemInfo memInfo = new MemInfo();
         memInfo.setMemId(memInfoDto.getMemId());

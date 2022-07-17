@@ -6,10 +6,10 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
-public class OrderInfoDto implements Serializable {
+public class OrderInfoDTO implements Serializable {
     private final String orderName;
     private final String orderSub;
-    private final RoomInfoDto roomNo;
+    private final RoomInfoDTO roomNo;
     private final Integer orderMemNo;
     private final LocalDateTime orderAbleDate;
     private final LocalDateTime orderRcvDate;

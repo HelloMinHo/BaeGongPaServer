@@ -5,7 +5,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class MemLoginLogDto {
+public class MemLoginLogDTO {
     private final Long memNo;
     private final LocalDateTime insDate;
 

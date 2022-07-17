@@ -3,6 +3,7 @@ package com.example.BaeGongPaServer.Repository;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 public interface MemInfoRepository extends JpaRepository<MemInfo, Long> {
@@ -12,8 +13,6 @@ public interface MemInfoRepository extends JpaRepository<MemInfo, Long> {
 
     MemInfo findByMemId(String memId);
 
-    MemInfo save(MemInfo memInfo);
-
-
+    MemInfo findByMemNo(Long memNo);
 
 }

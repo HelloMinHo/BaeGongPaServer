@@ -26,8 +26,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
-    implementation 'org.jetbrains:annotations:20.1.0'
-    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'mysql:mysql-connector-java'
@@ -35,9 +34,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
-	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
-    implementation 'org.modelmapper:modelmapper:2.4.2'
-
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
+    implementation 'org.modelmapper:modelmapper:3.1.0'
+    implementation 'com.google.firebase:firebase-admin:8.2.0'
+    implementation group :  'com.squareup.okhttp3', name : 'okhttp', version:'4.2.2'
 
 }
 

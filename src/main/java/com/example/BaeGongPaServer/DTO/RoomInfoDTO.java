@@ -1,13 +1,11 @@
 package com.example.BaeGongPaServer.DTO;
 
-import com.example.BaeGongPaServer.Domain.MemInfo;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 @Data
-public class RoomInfoDto implements Serializable {
+public class RoomInfoDTO implements Serializable {
     private final String roomName;
     private final String roomSub;
     private final Long hostMemNo;

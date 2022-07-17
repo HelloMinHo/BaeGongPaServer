@@ -11,7 +11,7 @@ public class MenuInfoDto implements Serializable {
     private final String menuName;
     private final String menuSub;
     private final BigDecimal menuPrice;
-    private final MenuBoxInfoDto menuBoxNo;
+    private final MenuBoxInfoDTO menuBoxNo;
     private final LocalDateTime insDate;
     private final LocalDateTime updDate;
 }

@@ -2,7 +2,7 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
-import com.example.BaeGongPaServer.DTO.RoomInfoDto;
+import com.example.BaeGongPaServer.DTO.RoomInfoDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 import com.example.BaeGongPaServer.Domain.RoomInfo;
 import com.example.BaeGongPaServer.Repository.RoomInfoRepository;
@@ -56,7 +56,7 @@ public class RoomInfoService {
     }
 
     // 방 생성
-    public ApiResponse createRoomInfo(RoomInfoDto roomInfoDto) {
+    public ApiResponse createRoomInfo(RoomInfoDTO roomInfoDto) {
 
 
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

@@ -1,16 +1,13 @@
 package com.example.BaeGongPaServer.Controller;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
-import com.example.BaeGongPaServer.DTO.RoomInfoDto;
-import com.example.BaeGongPaServer.Domain.RoomInfo;
+import com.example.BaeGongPaServer.DTO.RoomInfoDTO;
 import com.example.BaeGongPaServer.Service.RoomInfoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,7 +19,7 @@ public class RoomInfoController {
 
 
     @RequestMapping(value = "/room/create", method = RequestMethod.POST)
-    public ApiResponse createRoomInfo(@RequestBody RoomInfoDto roomInfoDto) {
+    public ApiResponse createRoomInfo(@RequestBody RoomInfoDTO roomInfoDto) {
 
         System.out.println(roomInfoDto);
         return roomInfoService.createRoomInfo(roomInfoDto);

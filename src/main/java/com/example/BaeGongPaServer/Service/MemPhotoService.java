@@ -2,8 +2,7 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
-import com.example.BaeGongPaServer.DTO.MemPhotoDto;
-import com.example.BaeGongPaServer.Domain.MemInfo;
+import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
 import com.example.BaeGongPaServer.Domain.MemPhoto;
 import com.example.BaeGongPaServer.Repository.MemPhotoRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +18,7 @@ public class MemPhotoService {
 
     private final MemPhotoRepository memPhotoRepository;
 
-    public ApiResponse InsMemPhoto(MemPhotoDto memPhotoDto) {
+    public ApiResponse InsMemPhoto(MemPhotoDTO memPhotoDto) {
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         MemPhoto memPhoto = new MemPhoto();
         memPhoto.setMemNo(authUserDAO.getMemNo());

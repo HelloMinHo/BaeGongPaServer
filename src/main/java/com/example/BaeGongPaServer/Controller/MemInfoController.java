@@ -1,22 +1,16 @@
 package com.example.BaeGongPaServer.Controller;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
-import com.example.BaeGongPaServer.DTO.AuthDTO;
-import com.example.BaeGongPaServer.DTO.MemInfoDto;
-import com.example.BaeGongPaServer.DTO.MemPhotoDto;
+import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
 import com.example.BaeGongPaServer.Service.AuthService;
 import com.example.BaeGongPaServer.Service.MemPhotoService;
 import com.example.BaeGongPaServer.Service.MemberInfoService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.UUID;
 
 
@@ -57,7 +51,7 @@ public class MemInfoController {
 
                 file.transferTo(new File(filePath + fileName));
                 memInfoService.InsMemPfPhoto(filePath + fileName);
-                MemPhotoDto memPhotoDto = new MemPhotoDto("a", filePath, fileName, fileSize, 0l);
+                MemPhotoDTO memPhotoDto = new MemPhotoDTO("a", filePath, fileName, fileSize, 0l);
                 apiResponse = memPhotoService.InsMemPhoto(memPhotoDto);
 
             }
@@ -68,16 +62,15 @@ public class MemInfoController {
 
         return apiResponse;
     }
-//
-//
-//    // 회원가입
-//    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-//    public ApiResponse signIn(@ModelAttribute MemInfoDto memInfoDto) {
-//
-//        ApiResponse apiResponse = memInfoService.createMemInfo(memInfoDto);
-//        System.out.println("apiResponse" + apiResponse);
-//
-//        return apiResponse;
-//    }
+
+    @RequestMapping(value = "/reg-fcm", method = RequestMethod.POST)
+    public ApiResponse updateFcmToken(@RequestParam String fcmToken) {
+
+        ApiResponse apiResponse = new ApiResponse();
+        apiResponse = memInfoService.updateFcmToken(fcmToken);
+
+        return apiResponse;
+    }
+
 
 }
