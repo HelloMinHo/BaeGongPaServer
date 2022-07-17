@@ -2,6 +2,7 @@ package com.example.BaeGongPaServer.Controller;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
+import com.example.BaeGongPaServer.DTO.MemSessDTO;
 import com.example.BaeGongPaServer.Service.AuthService;
 import com.example.BaeGongPaServer.Service.MemPhotoService;
 import com.example.BaeGongPaServer.Service.MemberInfoService;
@@ -71,6 +72,17 @@ public class MemInfoController {
 
         return apiResponse;
     }
+
+    @RequestMapping(value = "/ins-sess", method = RequestMethod.POST)
+    public ApiResponse insertMemSess(@RequestParam MemSessDTO memSessDTO) {
+
+
+        ApiResponse apiResponse = new ApiResponse();
+        apiResponse = memInfoService.insertMemSess(memSessDTO);
+
+        return apiResponse;
+    }
+
 
 
 }

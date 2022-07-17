@@ -2,8 +2,10 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
+import com.example.BaeGongPaServer.DTO.MemSessDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 
+import com.example.BaeGongPaServer.Domain.MemSess;
 import com.example.BaeGongPaServer.Repository.MemInfoRepository;
 
 import com.example.BaeGongPaServer.Repository.MemSessRepository;
@@ -11,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
 
 
 @Service
@@ -79,6 +83,33 @@ public class MemberInfoService {
             apiResponse.setResultValue("data", res);
 
 
+        }
+        return apiResponse;
+    }
+
+    @Transactional
+    public ApiResponse insertMemSess(MemSessDTO memSessDTO) {
+        AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        MemSess memSess = new MemSess();
+
+        memSess.setMemNo(memSessDTO.getMemNo());
+        memSess.setDeviceId(memSessDTO.getDeviceId());
+        memSess.setDeviceCode(memSessDTO.getDeviceCode());
+        memSess.setFcmToken(memSessDTO.getFcmToken());
+        memSess.setLatitude(memSessDTO.getLatitude());
+        memSess.setLongitude(memSessDTO.getLongitude());
+        memSess.setInsDate(LocalDateTime.now());
+        memSess.setUpdDate(LocalDateTime.now());
+        MemSess rst = memSessRepository.save(memSess);
+        if (rst == null) {
+            apiResponse.setCode(401);
+            apiResponse.setMessage("insertMemSess 실패");
+            apiResponse.setResultValue("data", "");
+        } else {
+            apiResponse.setCode(200);
+            apiResponse.setMessage("insertMemSess 성공");
+            apiResponse.setResultValue("data", rst);
         }
         return apiResponse;
     }

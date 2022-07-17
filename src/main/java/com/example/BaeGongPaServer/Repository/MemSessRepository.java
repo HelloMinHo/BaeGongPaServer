@@ -10,7 +10,7 @@ public interface MemSessRepository extends JpaRepository<MemSess, Long> {
 
     MemSess findByMemNo(Long memNo);
 
-    //MemInfo save(MemInfo memInfo);
+    MemSess save(MemSess memSess);
 
     @Modifying
     @Query("update MemInfo m set m.fcmToken = ?2 where m.memNo = ?1")
