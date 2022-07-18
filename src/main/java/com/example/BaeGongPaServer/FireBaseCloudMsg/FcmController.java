@@ -21,11 +21,10 @@ public class FcmController {
     }
 
     @RequestMapping(value = "/sendFcm", method = RequestMethod.POST)
-    private ApiResponse sendFcmMessage(@ModelAttribute FcmSendMessageDTO FcmSendMessageDTO) throws IOException {
+    private String sendFcmMessage(@ModelAttribute FcmSendMessageDTO FcmSendMessageDTO) throws IOException {
 
-        fcmService.sendMessageTo(FcmSendMessageDTO.getMemNo(), FcmSendMessageDTO.getTitle(), FcmSendMessageDTO.getBody());
+        return fcmService.sendMessageTo(FcmSendMessageDTO.getMemNo(), FcmSendMessageDTO.getTitle(), FcmSendMessageDTO.getBody());
 
-        return null;
 
     }
 }

@@ -42,7 +42,7 @@ public class FcmService {
         return memSessRepository.findByMemNo(memNo).getFcmToken();
     }
 
-    public void sendMessageTo(Long memNo, String title, String body) throws IOException {
+    public String sendMessageTo(Long memNo, String title, String body) throws IOException {
         String message = makeMessage(getTargetToken(memNo), title, body);
         System.out.println("message : " + message);
 
@@ -58,6 +58,8 @@ public class FcmService {
         Response response = okHttpClient.newCall(request).execute();
 
         System.out.println(response.body().string());
+
+        return response.body().string();
 
 
 
