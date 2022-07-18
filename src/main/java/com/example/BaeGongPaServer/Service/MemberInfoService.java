@@ -72,7 +72,8 @@ public class MemberInfoService {
     public ApiResponse updateFcmToken(String fcmToken) {
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        int res = memSessRepository.updateFcmTokenByMemNo(authUserDAO.getMemNo(), fcmToken);
+        memSessRepository.updateFcmTokenByMemNo(authUserDAO.getMemNo(), fcmToken);
+        int res = 1;
         if (res < 1) {
             apiResponse.setCode(401);
             apiResponse.setMessage("updateFcmToken 실패");

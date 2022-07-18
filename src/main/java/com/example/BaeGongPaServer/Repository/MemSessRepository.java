@@ -13,8 +13,8 @@ public interface MemSessRepository extends JpaRepository<MemSess, Long> {
     MemSess save(MemSess memSess);
 
     @Modifying
-    @Query("update MemInfo m set m.fcmToken = ?2 where m.memNo = ?1")
-    int updateFcmTokenByMemNo(Long memNo, String fcmToken);
+    @Query("update MemSess m set m.fcmToken = ?2 where m.memNo = ?1")
+    void updateFcmTokenByMemNo(Long memNo, String fcmToken);
 
 
 }

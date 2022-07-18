@@ -24,6 +24,7 @@ public class FcmController {
     private ApiResponse sendFcmMessage(@ModelAttribute FcmSendMessageDTO FcmSendMessageDTO) throws IOException {
 
         fcmService.sendMessageTo(FcmSendMessageDTO.getMemNo(), FcmSendMessageDTO.getTitle(), FcmSendMessageDTO.getBody());
+
         return null;
 
     }
