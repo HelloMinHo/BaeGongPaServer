@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class MemInfoDTO implements Serializable {
+public class SignUpDTO implements Serializable {
 
     private final String memId;
     private final String memPwd;

@@ -4,6 +4,7 @@ import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DTO.AuthDTO;
 import com.example.BaeGongPaServer.DTO.MemInfoDTO;
 import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
+import com.example.BaeGongPaServer.DTO.SignUpDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 import com.example.BaeGongPaServer.Service.AuthService;
 import com.example.BaeGongPaServer.Service.MemPhotoService;
@@ -26,36 +27,11 @@ public class AuthController {
     private final MemPhotoService memPhotoService;
 
 
-    @RequestMapping(value = "/signIn", method = RequestMethod.POST)
+    @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public ApiResponse signUp(@ModelAttribute AuthDTO authDTO) {
         ApiResponse apiResponse = authService.memberLogin(authDTO);
         System.out.println("로그인 성공");
         return apiResponse;
-    }
-
-
-    @RequestMapping(value = "/signUp/photo", method = RequestMethod.POST)
-    public ApiResponse regPhoto(@ModelAttribute MemPhotoDTO memPhotoDto) {
-
-        ApiResponse apiResponse = memPhotoService.InsMemPhoto(memPhotoDto);
-
-        memInfoService.InsMemPfPhoto(memPhotoDto.getPhotoPath() + memPhotoDto.getPhotoFile());
-        System.out.println("apiResponse" + apiResponse);
-
-        return apiResponse;
-    }
-
-    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public ApiResponse signIn(@ModelAttribute MemInfoDTO memInfoDto) {
-
-        MemInfo memInfo = new MemInfo();
-        memInfo.setMemId(memInfoDto.getMemId());
-        memInfo.setMemNick(memInfoDto.getMemNick());
-        memInfo.setMemPwd(memInfoDto.getMemPwd());
-        memInfo.setInsDate(LocalDateTime.now());
-        memInfo.setUpdDate(LocalDateTime.now());
-
-        return memInfoService.createMemInfo(memInfo);
     }
 
     @RequestMapping(value = "/user/roomList", method = RequestMethod.POST)

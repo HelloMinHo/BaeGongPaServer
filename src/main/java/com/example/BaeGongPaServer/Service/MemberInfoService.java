@@ -2,6 +2,7 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
+import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
 import com.example.BaeGongPaServer.DTO.MemSessDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 
@@ -13,8 +14,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 @Service
@@ -26,24 +31,43 @@ public class MemberInfoService {
 
     ApiResponse apiResponse = new ApiResponse();
 
+    public boolean memIdCheck(String memId) {
+        return memInfoRepository.existsByMemId(memId);
+    }
+
+    public boolean memNickCheck(String memNick) {
+        return memInfoRepository.existsByMemNick(memNick);
+    }
+
+
     public ApiResponse createMemInfo(MemInfo memInfo) {
+        apiResponse.setResultValue("memNo", 0);
 
-        if (memInfo.getMemId().replace(" ", "").isEmpty()) {
+        if (memIdCheck(memInfo.getMemId())) {
+            apiResponse.setMessage("이미 가입된 이메일 입니다.");
+            apiResponse.setCode(400);
+        } else if (memNickCheck(memInfo.getMemNick().trim())) {
+            apiResponse.setMessage("이미 가입된 닉네임 입니다.");
+            apiResponse.setCode(400);
+        } else if (memInfo.getMemId().trim().isEmpty()) {
             apiResponse.setMessage("아이디를 입력해주세요.");
-        } else if (memInfo.getMemPwd().replace(" ", "").isEmpty()) {
+            apiResponse.setCode(400);
+        } else if (memInfo.getMemPwd().trim().isEmpty()) {
             apiResponse.setMessage("패스워드를 입력해주세요.");
-        } else if (memInfo.getMemNick().replace(" ", "").isEmpty()) {
+            apiResponse.setCode(400);
+        } else if (memInfo.getMemNick().trim().isEmpty()) {
             apiResponse.setMessage("닉네임을 입력해주세요.");
+            apiResponse.setCode(400);
         } else {
-            MemInfo rst = memInfoRepository.save(memInfo);
-
             apiResponse.setCode(200);
-            apiResponse.setResultValue("data", rst);
-            apiResponse.setResultValue("data2", rst);
+            MemInfo rst = memInfoRepository.save(memInfo);
+            apiResponse.setResultValue("memNo", rst.getMemNo());
             apiResponse.setMessage("회원가입이 완료되었습니다.");
         }
+
         return apiResponse;
     }
+
 
     @Transactional
     public ApiResponse InsMemPfPhoto(String photoName) {
@@ -104,13 +128,11 @@ public class MemberInfoService {
         memSess.setUpdDate(LocalDateTime.now());
         MemSess rst = memSessRepository.save(memSess);
         if (rst == null) {
-            apiResponse.setCode(401);
-            apiResponse.setMessage("insertMemSess 실패");
-            apiResponse.setResultValue("data", "");
+            apiResponse.setCode(400);
+            apiResponse.setMessage("세션정보 등록에 실패하였습니다.");
         } else {
             apiResponse.setCode(200);
-            apiResponse.setMessage("insertMemSess 성공");
-            apiResponse.setResultValue("data", rst);
+            apiResponse.setMessage("회원의 세션정보가 등록되었습니다.");
         }
         return apiResponse;
     }

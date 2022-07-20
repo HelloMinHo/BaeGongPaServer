@@ -27,7 +27,7 @@ public class AuthService {
         MemInfo memInfo = memInfoRepository.findByMemIdAndMemPwd(authDTO.getMemId(), authDTO.getMemPwd());
 
         if (memInfo == null) {
-            apiResponse.setCode(401);
+            apiResponse.setCode(400);
             apiResponse.setMessage("이메일 또는 비밀번호를 확인해주세요.");
             apiResponse.setResultValue("Token", "");
         } else {
@@ -37,7 +37,7 @@ public class AuthService {
             memLoginLogRepository.save(memLoginLog);
 
             apiResponse.setCode(200);
-            apiResponse.setMessage("로그인되었습니다.");
+            apiResponse.setMessage("성공적으로 로그인이 되었습니다.");
             apiResponse.setResultValue("Token", authProvider.createAccessToken(authDTO));
         }
 

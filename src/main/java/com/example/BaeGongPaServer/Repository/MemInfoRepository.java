@@ -11,6 +11,10 @@ public interface MemInfoRepository extends JpaRepository<MemInfo, Long> {
     @Query("select m from MemInfo m where m.memId = ?1 and m.memPwd = ?2")
     MemInfo findByMemIdAndMemPwd(String memId, String memPwd);
 
+    boolean existsByMemNick(String memNick);
+
+    boolean existsByMemId(String memId);
+
     MemInfo findByMemId(String memId);
 
     MemInfo findByMemNo(Long memNo);
