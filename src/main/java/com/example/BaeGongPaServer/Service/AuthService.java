@@ -2,6 +2,7 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Auth.AuthProvider;
 import com.example.BaeGongPaServer.Component.ApiResponse;
+import com.example.BaeGongPaServer.DAO.MemInfoDAO;
 import com.example.BaeGongPaServer.DTO.AuthDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 import com.example.BaeGongPaServer.Domain.MemLoginLog;
@@ -36,9 +37,19 @@ public class AuthService {
             memLoginLog.setInsDate(LocalDateTime.now());
             memLoginLogRepository.save(memLoginLog);
 
+            MemInfoDAO memInfoDAO = new MemInfoDAO();
+            memInfoDAO.setMemId(memInfo.getMemId());
+            memInfoDAO.setMemNo(memInfo.getMemNo());
+            memInfoDAO.setMemNick(memInfo.getMemNick());
+            memInfoDAO.setMemPfPhoto(memInfo.getMemBgPhoto());
+            memInfoDAO.setMemRoll(memInfo.getMemRoll());
+            memInfoDAO.setInsDate(memInfo.getInsDate());
+            memInfoDAO.setUpdDate(memInfo.getUpdDate());
+
             apiResponse.setCode(200);
-            apiResponse.setMessage("성공적으로 로그인이 되었습니다.");
             apiResponse.setResultValue("Token", authProvider.createAccessToken(authDTO));
+            apiResponse.setResultValue("memInfo", memInfoDAO);
+            apiResponse.setMessage("성공적으로 로그인이 되었습니다.");
         }
 
         return apiResponse;

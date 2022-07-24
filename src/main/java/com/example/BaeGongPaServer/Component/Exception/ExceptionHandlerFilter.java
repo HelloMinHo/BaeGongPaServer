@@ -25,6 +25,7 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
             System.out.println("OncePerRequestFilter");
+            System.out.println("Request : " + request);
             filterChain.doFilter(request, response);
         } catch (jwtTokenNotAvailable e) {
             System.out.println("doFilterInternal : " + e.getMessage());

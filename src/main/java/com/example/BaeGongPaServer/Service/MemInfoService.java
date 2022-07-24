@@ -2,7 +2,6 @@ package com.example.BaeGongPaServer.Service;
 
 import com.example.BaeGongPaServer.Component.ApiResponse;
 import com.example.BaeGongPaServer.DAO.AuthUserDAO;
-import com.example.BaeGongPaServer.DTO.MemPhotoDTO;
 import com.example.BaeGongPaServer.DTO.MemSessDTO;
 import com.example.BaeGongPaServer.Domain.MemInfo;
 
@@ -14,17 +13,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 
 @Service
 @RequiredArgsConstructor
-public class MemberInfoService {
+public class MemInfoService {
 
     private final MemInfoRepository memInfoRepository;
     private final MemSessRepository memSessRepository;
@@ -68,30 +63,6 @@ public class MemberInfoService {
         return apiResponse;
     }
 
-
-    @Transactional
-    public ApiResponse InsMemPfPhoto(String photoName) {
-
-        AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-        MemInfo memInfo = memInfoRepository.findByMemId(authUserDAO.getMemId());
-        memInfo.setMemPfPhoto(photoName);
-        MemInfo rst = memInfoRepository.save(memInfo);
-
-        if (rst == null) {
-            apiResponse.setCode(401);
-            apiResponse.setMessage("setMemPfPhoto 실패");
-            apiResponse.setResultValue("data", "");
-        } else {
-            apiResponse.setCode(200);
-            apiResponse.setMessage("setMemPfPhoto 성공");
-            apiResponse.setResultValue("data", rst.getMemId() + " / " + rst.getMemNo());
-
-        }
-        return apiResponse;
-
-    }
-
     @Transactional
     public ApiResponse updateFcmToken(String fcmToken) {
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -118,7 +89,7 @@ public class MemberInfoService {
 
         MemSess memSess = new MemSess();
 
-        memSess.setMemNo(memSessDTO.getMemNo());
+        memSess.setMemNo(authUserDAO.getMemNo());
         memSess.setDeviceId(memSessDTO.getDeviceId());
         memSess.setDeviceCode(memSessDTO.getDeviceCode());
         memSess.setFcmToken(memSessDTO.getFcmToken());

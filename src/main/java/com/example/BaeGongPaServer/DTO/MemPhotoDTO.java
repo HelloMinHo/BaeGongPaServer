@@ -8,6 +8,5 @@ public class MemPhotoDTO {
     private final String photoPath;
     private final String photoFile;
     private final String photoSize;
-    private final Long memNo;
 
 }

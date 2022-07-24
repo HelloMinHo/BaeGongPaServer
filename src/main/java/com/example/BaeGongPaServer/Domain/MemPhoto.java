@@ -36,4 +36,6 @@ public class MemPhoto {
     @Column(name = "ins_date")
     private LocalDateTime insDate;
 
+
+
 }

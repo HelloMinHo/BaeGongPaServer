@@ -10,5 +10,6 @@ public class SignUpDTO implements Serializable {
     private final String memId;
     private final String memPwd;
     private final String memNick;
+    private final String memPfPhoto;
 
 }
