@@ -57,6 +57,7 @@ public class MemPhotoService {
         memPhoto.setPhotoSize(memPhotoDAO.getPhotoSize());
         memPhoto.setPhotoPath(memPhotoDAO.getPhotoPath());
         memPhoto.setPhotoType(memPhotoDAO.getPhotoType());
+        memPhoto.setPhotoFile(memPhotoDAO.getPhotoFile());
         memPhoto.setInsDate(LocalDateTime.now());
         return memPhotoRepository.save(memPhoto);
     }
