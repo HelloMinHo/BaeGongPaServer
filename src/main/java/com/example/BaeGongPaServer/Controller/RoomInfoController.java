@@ -38,13 +38,16 @@ public class RoomInfoController {
 
     }
 
-    @RequestMapping(value = "/room/allRoomList", method = RequestMethod.GET)
-    public ApiResponse getAllRoomList(@RequestParam Map<String, String> params) {
+    @RequestMapping(value = "/main/room-all", method = RequestMethod.GET)
+    public ApiResponse getAllRoomList(String stDate, String enDate) {
 
-        LocalDateTime stDate = LocalDateTime.parse(params.get("stDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        LocalDateTime enDate = LocalDateTime.parse(params.get("enDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(stDate);
+      //  System.out.println(enDate);
+//        LocalDateTime stDate = LocalDateTime.parse(params.get("stDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+//        LocalDateTime enDate = LocalDateTime.parse(params.get("enDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
-        return roomInfoService.getAllRoomList(stDate, enDate);
+        // return roomInfoService.getAllRoomList(stDate, enDate);
+        return  null;
 
     }
 

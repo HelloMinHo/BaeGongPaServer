@@ -36,6 +36,9 @@ public class MemInfo {
     @Column(name = "mem_pf_photo")
     private String memPfPhoto;
 
+    @Column(name = "mem_pf_photo_no")
+    private long memPfPhotoNo;
+
     @Column(name = "mem_roll")
     private Integer memRoll;
 

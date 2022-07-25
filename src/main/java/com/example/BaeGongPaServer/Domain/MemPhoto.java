@@ -30,8 +30,8 @@ public class MemPhoto {
     @Column(name = "photo_file")
     private String photoFile;
 
-    @Column(name = "mem_no")
-    private Long memNo;
+//    @Column(name = "mem_no")
+//    private Long memNo;
 
     @Column(name = "ins_date")
     private LocalDateTime insDate;

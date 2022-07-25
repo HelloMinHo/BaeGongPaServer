@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class MemSess {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mem_no")
     private Long memNo;
 
