@@ -22,12 +22,14 @@ public class AuthProvider {
 
     private String secretKey = "BaeGongPaIsSecretKey";
 
-    private long tokenValidTime = 1000L * 60 * 60;
+    private long AccessTokenValidTime = 1000L * 60 * 60;
+    private long RefreshTokenValidTime = 1000L * 60 * 60 * 24;
 
     private final CustomUserDetailService customUserDetailService;
 
     public String getUserInfo(String token) {
         return (String) validateJwtToken(token).get("memId");
+
     }
 
     // 토큰 인증 성공시 SecurityContextHolder 에 저장할 Authentication 객체 생성
@@ -47,21 +49,45 @@ public class AuthProvider {
         // Payload 정보
         payloads.put("memId", authDTO.getMemId());
         Date date = new Date();
-        System.out.println("AccessToken : \n DATE : " + date + "\n ExpirationDate : " + (date.getTime() + tokenValidTime));
+        System.out.println("AccessToken : \n DATE : " + date + "\n ExpirationDate : " + (date.getTime() + AccessTokenValidTime));
 
-        String jwt = Jwts
-                .builder()
-                .setHeader(headers)
-                .setClaims(payloads)
-                .setSubject("user")
-                .setIssuedAt(date)
-                .setExpiration(new Date(date.getTime() + tokenValidTime))
-                .signWith(SignatureAlgorithm.HS256, secretKey)
-                .compact();
+        String jwt = Jwts.builder().setHeader(headers).setClaims(payloads).setSubject("access").setIssuedAt(date).setExpiration(new Date(date.getTime() + AccessTokenValidTime)).signWith(SignatureAlgorithm.HS256, secretKey).compact();
 
         return jwt;
     }
 
+    public String createRefreshToken(AuthDTO authDTO) {
+        Map<String, Object> headers = new HashMap<>();
+        Map<String, Object> payloads = new HashMap<>();
+        // Header 정보
+        headers.put("type", "JWT");
+        headers.put("alg", "HS256");
+        // Payload 정보
+        payloads.put("memId", authDTO.getMemId());
+        Date date = new Date();
+        System.out.println("RefreshToken : \n DATE : " + date + "\n ExpirationDate : " + (date.getTime() + RefreshTokenValidTime));
+
+        String jwt = Jwts.builder().setHeader(headers).setClaims(payloads).setSubject("refresh").setIssuedAt(date).setExpiration(new Date(date.getTime() + RefreshTokenValidTime)).signWith(SignatureAlgorithm.HS256, secretKey).compact();
+
+        return jwt;
+    }
+
+    public String reCreateAccessToken(String refreshToken) {
+        Claims claims = validateJwtToken(refreshToken);
+        AuthDTO authDTO = new AuthDTO(claims.get("memId").toString(), "");
+        return createAccessToken(authDTO);
+    }
+
+    public boolean validateJwtTokenExceptionExpire(String authToken) {
+        try {
+            Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken).getBody();
+            return false;
+        } catch (ExpiredJwtException e) {
+            return true;
+        } catch (Exception e) {
+            return true;
+        }
+    }
 
     public Claims validateJwtToken(String authToken) {
 

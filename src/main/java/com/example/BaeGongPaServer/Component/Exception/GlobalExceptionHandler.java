@@ -19,14 +19,9 @@ public class GlobalExceptionHandler {
     public ApiResponse handleException(Exception ex) {
 
         log.error("handleException : " + ex.getMessage());
-        System.out.println("handleException : " + ex);
-        System.out.println("handleException : " + ex.getMessage());
-
         ApiResponse apiResponse = new ApiResponse();
         apiResponse.setCode(401);
-        apiResponse.setResultValue("data",ex);
-        apiResponse.setMessage("Test Exception : " + ex.getMessage());
-
+        apiResponse.setMessage(ex.getCause() + " : " + ex.getMessage());
         return apiResponse;
     }
 

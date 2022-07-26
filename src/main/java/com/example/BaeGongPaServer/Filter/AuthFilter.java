@@ -29,12 +29,15 @@ public class AuthFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String authToken = request.getHeader("Authentication");
-
-        // 토큰비어있으면 로그인 시도로 구분
-        if (authToken != null && !authToken.isEmpty()) {
-            Authentication authentication = authProvider.getAuthentication(authToken); // 인증객체 생성
-            SecurityContextHolder.getContext().setAuthentication(authentication);   //SecurityContextHolder 인증
+        String accessToken = request.getHeader("Authentication");
+        String refreshToken = request.getHeader("RefreshAuthentication");
+        if (refreshToken != null && !accessToken.isEmpty()) {
+        } else {
+            // 토큰비어있으면 로그인 시도로 구분
+            if (accessToken != null && !accessToken.isEmpty()) {
+                Authentication authentication = authProvider.getAuthentication(accessToken); // 인증객체 생성
+                SecurityContextHolder.getContext().setAuthentication(authentication);   //SecurityContextHolder 인증
+            }
         }
         filterChain.doFilter(request, response);
     }

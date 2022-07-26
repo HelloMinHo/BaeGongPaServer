@@ -28,5 +28,12 @@ public class SignInController {
         return memInfoService.insertMemSess(memSessDTO);
     }
 
+    @RequestMapping(value = "/signin/x-token", method = RequestMethod.POST)
+    public ApiResponse getAccessToken(@RequestHeader String Authentication, @RequestHeader String RefreshAuthentication) {
+        String accessToken = Authentication;
+        String refreshToken = RefreshAuthentication;
+        return authService.getAccessToken(accessToken, refreshToken);
+    }
+
 
 }
