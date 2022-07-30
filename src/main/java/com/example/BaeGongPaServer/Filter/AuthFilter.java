@@ -29,6 +29,9 @@ public class AuthFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+        logger.info("PATH : " + request.getServletPath());
+
         String accessToken = request.getHeader("Authentication");
         String refreshToken = request.getHeader("RefreshAuthentication");
         if (refreshToken != null && !accessToken.isEmpty()) {

@@ -24,21 +24,18 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
-            System.out.println("OncePerRequestFilter");
-            System.out.println("Request : " + request);
             filterChain.doFilter(request, response);
-        } catch (jwtTokenNotAvailable e) {
-            System.out.println("doFilterInternal : " + e.getMessage());
+        } catch (jwtTokenNotAvailable ex) {
+            log.error("GLOBAL_EXCEPTION : " + ex.getMessage());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             response.setCharacterEncoding("UTF-8");
-
             ApiResponse apiResponse = new ApiResponse();
             apiResponse.setCode(401);
-            apiResponse.setResultValue("error", e);
-            apiResponse.setMessage(e.getMessage());
+            apiResponse.setResultValue("RESULT_CODE", ex.getRstNo());
+            apiResponse.setMessage(ex.getMessage());
             objectMapper.writeValue(response.getWriter(), apiResponse);
         } finally {
-            System.out.println("ExceptionHandlerFilter END");
+
         }
     }
 }

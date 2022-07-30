@@ -47,44 +47,18 @@ public class SignUpController {
     @RequestMapping(value = "/signup-chk/id", method = RequestMethod.POST)
     public ApiResponse memInfoCheckMemId(@RequestParam String memId) {
 
-        boolean rst = memInfoService.memIdCheck(memId);
-        ApiResponse apiResponse = new ApiResponse();
-        if (rst) {
-            apiResponse.setCode(400);
-            apiResponse.setMessage("이미 사용중인 이메일 입니다.");
-        } else {
-            apiResponse.setCode(200);
-            apiResponse.setMessage("사용 가능한 이메일 입니다.");
-        }
-        return apiResponse;
+        return memInfoService.memIdCheck(memId);
     }
 
     @RequestMapping(value = "/signup-chk/nick", method = RequestMethod.POST)
     public ApiResponse memInfoCheckMemNick(@RequestParam String memNick) {
-        boolean rst = memInfoService.memNickCheck(memNick);
-        ApiResponse apiResponse = new ApiResponse();
-        if (rst) {
-            apiResponse.setCode(400);
-            apiResponse.setMessage("이미 사용중인 닉네임 입니다.");
-        } else {
-            apiResponse.setCode(200);
-            apiResponse.setMessage("사용 가능한 닉네임 입니다.");
-        }
-        return apiResponse;
-    }
 
+        return memInfoService.memNickCheck(memNick);
+    }
 
     @RequestMapping(value = "/signup/photo", method = RequestMethod.POST)
     public ApiResponse photoFileIns(@RequestParam MultipartFile file) throws IOException {
         return memPhotoService.savePhotofile(file);
     }
-
-//    @RequestMapping(value = "/signup/memphoto", method = RequestMethod.POST)
-//    public ApiResponse prfilePhotoIns(@ModelAttribute MemPhotoDTO memPhotoDTO) {
-//
-//
-//        return memPhotoService.insertMemPhoto(memPhotoDTO);
-//    }
-
 
 }

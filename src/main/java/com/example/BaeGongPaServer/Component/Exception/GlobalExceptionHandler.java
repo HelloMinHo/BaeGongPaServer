@@ -18,10 +18,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public ApiResponse handleException(Exception ex) {
 
-        log.error("handleException : " + ex.getMessage());
+        log.error("GLOBAL_EXCEPTION : " + ex.getMessage());
         ApiResponse apiResponse = new ApiResponse();
         apiResponse.setCode(401);
-        apiResponse.setMessage(ex.getCause() + " : " + ex.getMessage());
+        apiResponse.setResultValue("RESULT_CODE", -1);
+        apiResponse.setMessage(ex.getMessage());
         return apiResponse;
     }
 

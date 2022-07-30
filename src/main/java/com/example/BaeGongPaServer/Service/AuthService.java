@@ -29,8 +29,8 @@ public class AuthService {
         ApiResponse apiResponse = new ApiResponse();
         if (memInfo == null) {
             apiResponse.setCode(400);
+            apiResponse.setResultValue("RESULT_CODE", -1);
             apiResponse.setMessage("이메일 또는 비밀번호를 확인해주세요.");
-            apiResponse.setResultValue("Token", "");
         } else {
             MemLoginLog memLoginLog = new MemLoginLog();
             memLoginLog.setMemNo(memInfo.getMemNo());
@@ -59,25 +59,27 @@ public class AuthService {
     public ApiResponse getAccessToken(String accessToken, String refreshToken) {
         ApiResponse apiResponse = new ApiResponse();
 
-        if (accessToken != "" && refreshToken != "") {
-            if (authProvider.validateJwtTokenExceptionExpire(accessToken)) {
+        if (accessToken.isEmpty() || refreshToken.isEmpty()) {
+            apiResponse.setCode(401);
+            apiResponse.setResultValue("RESULT_CODE", -1);
+            apiResponse.setMessage("엑세스토큰 또는 리프레시토큰의 정보가 올바르지않습니다.");
+        } else {
+            if (!authProvider.validateJwtTokenExceptionExpire(accessToken)) {
+                apiResponse.setCode(400);
+                apiResponse.setResultValue("RESULT_CODE", -2);
+                apiResponse.setMessage("엑세스토큰의 유효기한이 남았습니다.");
+            } else {
                 String authToken = authProvider.reCreateAccessToken(refreshToken);
                 if (authToken.isEmpty()) {
                     apiResponse.setCode(400);
+                    apiResponse.setResultValue("RESULT_CODE", -3);
                     apiResponse.setMessage("새로운 로그인이 필요합니다.");
                 } else {
                     apiResponse.setCode(200);
                     apiResponse.setResultValue("AccessToken", authToken);
                     apiResponse.setMessage("토큰이 재발급 되었습니다.");
                 }
-            } else {
-                apiResponse.setCode(400);
-                apiResponse.setMessage("만료되지 않은 토큰입니다.");
             }
-
-        } else {
-            apiResponse.setCode(401);
-            apiResponse.setMessage("토큰정보가 올바르지않습니다.");
         }
         return apiResponse;
     }

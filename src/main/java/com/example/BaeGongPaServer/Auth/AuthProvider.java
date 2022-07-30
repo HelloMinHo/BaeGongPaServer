@@ -95,15 +95,15 @@ public class AuthProvider {
             Claims claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(authToken).getBody();
             return claims;
         } catch (ExpiredJwtException e) {
-            throw new jwtTokenNotAvailable("인증 Token 사용 기한이 경과되었습니다.");
+            throw new jwtTokenNotAvailable("인증 Token 사용 기한이 경과되었습니다.",-1);
         } catch (UnsupportedJwtException e) {
-            throw new jwtTokenNotAvailable("지원되지 않는 Token 형식 입니다.");
+            throw new jwtTokenNotAvailable("지원되지 않는 Token 형식 입니다.",-2);
         } catch (MalformedJwtException e) {
-            throw new jwtTokenNotAvailable("인증 Token 이 올바르게 구성되지 않았습니다.");
+            throw new jwtTokenNotAvailable("인증 Token 이 올바르게 구성되지 않았습니다.",-3);
         } catch (SignatureException e) {
-            throw new jwtTokenNotAvailable("인증 Token signature 가 올바르지 않습니다.");
+            throw new jwtTokenNotAvailable("인증 Token signature 가 올바르지 않습니다.",-4);
         } catch (IllegalArgumentException e) {
-            throw new jwtTokenNotAvailable("인증 Token 을 다시 한 번 확인해 주세요.");
+            throw new jwtTokenNotAvailable("인증 Token 을 다시 한 번 확인해 주세요.",-5);
         }
     }
 

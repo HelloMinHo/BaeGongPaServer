@@ -16,13 +16,4 @@ public class MemInfoController {
     private final MemInfoService memInfoService;
     private final MemPhotoService memPhotoService;
 
-    @RequestMapping(value = "/ref", method = RequestMethod.POST)
-    public ApiResponse getAccessToken(@RequestHeader String AccessToken, @RequestHeader String RefreshToken) {
-
-        System.out.println("AccessToken : " + AccessToken);
-        System.out.println("RefreshToken : " + RefreshToken);
-
-        return null;
-    }
-
 }

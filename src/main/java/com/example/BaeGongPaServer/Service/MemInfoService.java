@@ -24,34 +24,60 @@ public class MemInfoService {
     private final MemInfoRepository memInfoRepository;
     private final MemSessRepository memSessRepository;
 
-    ApiResponse apiResponse = new ApiResponse();
+    public ApiResponse memIdCheck(String memId) {
+        ApiResponse apiResponse = new ApiResponse();
+        boolean rst = memInfoRepository.existsByMemId(memId);
+        if (rst) {
+            apiResponse.setCode(400);
+            apiResponse.setResultValue("RESULT_CODE", -1);
+            apiResponse.setMessage("이미 사용중인 이메일 입니다.");
+        } else {
+            apiResponse.setCode(200);
+            apiResponse.setMessage("사용 가능한 이메일 입니다.");
+        }
 
-    public boolean memIdCheck(String memId) {
-        return memInfoRepository.existsByMemId(memId);
+        return apiResponse;
     }
 
-    public boolean memNickCheck(String memNick) {
-        return memInfoRepository.existsByMemNick(memNick);
+    public ApiResponse memNickCheck(String memNick) {
+        ApiResponse apiResponse = new ApiResponse();
+        boolean rst = memInfoRepository.existsByMemNick(memNick);
+        if (rst) {
+            apiResponse.setCode(400);
+            apiResponse.setResultValue("RESULT_CODE", -1);
+            apiResponse.setMessage("이미 사용중인 닉네임 입니다.");
+        } else {
+            apiResponse.setCode(200);
+            apiResponse.setMessage("사용 가능한 닉네임 입니다.");
+        }
+
+        return apiResponse;
     }
 
 
     public ApiResponse createMemInfo(MemInfo memInfo) {
+        ApiResponse apiResponse = new ApiResponse();
         apiResponse.setResultValue("memNo", 0);
 
-        if (memIdCheck(memInfo.getMemId())) {
+        if (memInfoRepository.existsByMemId(memInfo.getMemId())) {
             apiResponse.setMessage("이미 가입된 이메일 입니다.");
+            apiResponse.setResultValue("RESULT_CODE", -1);
             apiResponse.setCode(400);
-        } else if (memNickCheck(memInfo.getMemNick().trim())) {
+        } else if (memInfoRepository.existsByMemNick(memInfo.getMemNick().trim())) {
             apiResponse.setMessage("이미 가입된 닉네임 입니다.");
+            apiResponse.setResultValue("RESULT_CODE", -2);
             apiResponse.setCode(400);
         } else if (memInfo.getMemId().trim().isEmpty()) {
             apiResponse.setMessage("아이디를 입력해주세요.");
+            apiResponse.setResultValue("RESULT_CODE", -3);
             apiResponse.setCode(400);
         } else if (memInfo.getMemPwd().trim().isEmpty()) {
             apiResponse.setMessage("패스워드를 입력해주세요.");
+            apiResponse.setResultValue("RESULT_CODE", -4);
             apiResponse.setCode(400);
         } else if (memInfo.getMemNick().trim().isEmpty()) {
             apiResponse.setMessage("닉네임을 입력해주세요.");
+            apiResponse.setResultValue("RESULT_CODE", -5);
             apiResponse.setCode(400);
         } else {
             apiResponse.setCode(200);
@@ -65,6 +91,7 @@ public class MemInfoService {
 
     @Transactional
     public ApiResponse updateFcmToken(String fcmToken) {
+        ApiResponse apiResponse = new ApiResponse();
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         memSessRepository.updateFcmTokenByMemNo(authUserDAO.getMemNo(), fcmToken);
@@ -85,6 +112,7 @@ public class MemInfoService {
 
     @Transactional
     public ApiResponse insertMemSess(MemSessDTO memSessDTO) {
+        ApiResponse apiResponse = new ApiResponse();
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         MemSess memSess = new MemSess();
@@ -100,9 +128,11 @@ public class MemInfoService {
         MemSess rst = memSessRepository.save(memSess);
         if (rst == null) {
             apiResponse.setCode(400);
+            apiResponse.setResultValue("RESULT_CODE", -1);
             apiResponse.setMessage("세션정보 등록에 실패하였습니다.");
         } else {
             apiResponse.setCode(200);
+            apiResponse.setResultValue("memNo", rst.getMemNo());
             apiResponse.setMessage("회원의 세션정보가 등록되었습니다.");
         }
         return apiResponse;
