@@ -74,4 +74,8 @@ public class RoomInfo {
         this.insDate = insDate;
         this.updDate = updDate;
     }
+
+
+
+
 }

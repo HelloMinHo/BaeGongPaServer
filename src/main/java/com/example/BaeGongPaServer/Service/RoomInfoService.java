@@ -8,6 +8,9 @@ import com.example.BaeGongPaServer.Domain.RoomInfo;
 import com.example.BaeGongPaServer.Repository.RoomInfoRepository;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.stereotype.Service;
@@ -20,25 +23,33 @@ import java.util.List;
 public class RoomInfoService {
 
     private final RoomInfoRepository roomInfoRepository;
-    private ApiResponse apiResponse = new ApiResponse();
+
 
     // 전체 방 목록
-    public ApiResponse getAllRoomList(LocalDateTime stDate, LocalDateTime enDate) {
-        List<RoomInfo> rst = roomInfoRepository.findByInsDateBetween(stDate, enDate);
-        if (rst.size() > 0) {
-            apiResponse.setResultValue("data", rst);
-            apiResponse.setMessage("방 리스트 성공");
+    public ApiResponse getAllRoomList(LocalDateTime stDate, LocalDateTime enDate, int pageNo, int pagePerCnt) {
+        ApiResponse apiResponse = new ApiResponse();
+
+        if (pageNo < 0 || pagePerCnt < 1) {
+            apiResponse.setCode(400);
+            apiResponse.setResultValue("RESULT_CODE", -1);
+            apiResponse.setMessage("페이지 구분이 정확하지않습니다.");
         } else {
-            apiResponse.setCode(401);
-            apiResponse.setResultValue("data", rst);
-            apiResponse.setMessage("방 리스트 실패");
+            PageRequest pageRequest = PageRequest.of(pageNo, pagePerCnt, Sort.Direction.DESC, "updDate");
+
+            Page<RoomInfo> rst = roomInfoRepository.findByUpdDateBetween(stDate, enDate, pageRequest);
+            apiResponse.setCode(200);
+            apiResponse.setResultValue("totCnt", rst.getTotalElements());
+            apiResponse.setResultValue("totPage", rst.getTotalPages());
+            apiResponse.setResultValue("roomInfo", rst.getContent());
+            apiResponse.setMessage("생성된 방리스트가 정삭적으로 조회되었습니다.");
+
         }
         return apiResponse;
     }
 
     // 나의 방 목록
     public ApiResponse getMyRoomList() {
-
+        ApiResponse apiResponse = new ApiResponse();
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         MemInfo memInfo = new MemInfo();
         memInfo.setMemNo(authUserDAO.getMemNo());
@@ -58,7 +69,7 @@ public class RoomInfoService {
     // 방 생성
     public ApiResponse createRoomInfo(RoomInfoDTO roomInfoDto) {
 
-
+        ApiResponse apiResponse = new ApiResponse();
         AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 
@@ -66,7 +77,7 @@ public class RoomInfoService {
         MemInfo memInfo = new MemInfo();
         memInfo.setMemNo(authUserDAO.getMemNo());
 
-        ApiResponse apiResponse = new ApiResponse();
+
         RoomInfo roomInfo = new RoomInfo(
                 roomInfoDto.getRoomName()
                 , roomInfoDto.getRoomSub()
