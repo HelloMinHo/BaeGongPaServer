@@ -31,11 +31,10 @@ public class RoomInfoController {
 //        return roomInfoService.getMyRoomList();
 //    }
 
-    @RequestMapping(value = "/room/myRoomList", method = RequestMethod.GET)
-    public ApiResponse getMyRoomList() {
+    @RequestMapping(value = "/main/room-host", method = RequestMethod.GET)
+    public ApiResponse getMyRoomList(int pageNo, int pagePerCnt) {
 
-        return roomInfoService.getMyRoomList();
-
+        return roomInfoService.getMyRoomList(pageNo, pagePerCnt);
     }
 
     @RequestMapping(value = "/main/room-all", method = RequestMethod.GET)
@@ -45,7 +44,7 @@ public class RoomInfoController {
         LocalDateTime stDate = LocalDateTime.now().minusDays(1);
         LocalDateTime enDate = LocalDateTime.now();
 
-        return roomInfoService.getAllRoomList(stDate,enDate,pageNo,pagePerCnt);
+        return roomInfoService.getAllRoomList(stDate, enDate, pageNo, pagePerCnt);
 
 
     }

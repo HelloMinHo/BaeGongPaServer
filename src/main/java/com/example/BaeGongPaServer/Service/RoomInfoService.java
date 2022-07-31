@@ -41,27 +41,33 @@ public class RoomInfoService {
             apiResponse.setResultValue("totCnt", rst.getTotalElements());
             apiResponse.setResultValue("totPage", rst.getTotalPages());
             apiResponse.setResultValue("roomInfo", rst.getContent());
-            apiResponse.setMessage("생성된 방리스트가 정삭적으로 조회되었습니다.");
+            apiResponse.setMessage("생성된 방 리스트가 정삭적으로 조회되었습니다.");
 
         }
         return apiResponse;
     }
 
     // 나의 방 목록
-    public ApiResponse getMyRoomList() {
-        ApiResponse apiResponse = new ApiResponse();
-        AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        MemInfo memInfo = new MemInfo();
-        memInfo.setMemNo(authUserDAO.getMemNo());
-        List<RoomInfo> rst = roomInfoRepository.findByHostMemNo(memInfo);
+    public ApiResponse getMyRoomList(int pageNo, int pagePerCnt) {
 
-        if (rst.size() > 0) {
-            apiResponse.setResultValue("data", rst);
-            apiResponse.setMessage("방 호출 성공");
+        ApiResponse apiResponse = new ApiResponse();
+          AuthUserDAO authUserDAO = (AuthUserDAO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+          MemInfo memInfo = new MemInfo();
+          memInfo.setMemNo(authUserDAO.getMemNo());
+        if (pageNo < 0 || pagePerCnt < 1) {
+            apiResponse.setCode(400);
+            apiResponse.setResultValue("RESULT_CODE", -1);
+            apiResponse.setMessage("페이지 구분이 정확하지않습니다.");
         } else {
-            apiResponse.setCode(401);
-            apiResponse.setResultValue("data", rst);
-            apiResponse.setMessage("방 호출 실패");
+            PageRequest pageRequest = PageRequest.of(pageNo, pagePerCnt, Sort.Direction.DESC, "updDate");
+
+            Page<RoomInfo> rst = roomInfoRepository.findByHostMemNo(memInfo, pageRequest);
+            apiResponse.setCode(200);
+            apiResponse.setResultValue("totCnt", rst.getTotalElements());
+            apiResponse.setResultValue("totPage", rst.getTotalPages());
+            apiResponse.setResultValue("roomInfo", rst.getContent());
+            apiResponse.setMessage("나의 방 리스트가 정삭적으로 조회되었습니다.");
+
         }
         return apiResponse;
     }

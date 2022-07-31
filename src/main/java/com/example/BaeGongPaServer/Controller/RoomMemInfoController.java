@@ -25,4 +25,11 @@ public class RoomMemInfoController {
         return roomMemInfoService.getRoomMemInfo(Long.parseLong(params.get("roomNo").toString()));
     }
 
+    @RequestMapping(value = "/main/room-my", method = RequestMethod.GET)
+    public ApiResponse getRoomInfo(int pageNo, int pagePerCnt) {
+
+        return roomMemInfoService.getMyRoomList(pageNo,pagePerCnt);
+    }
+
+
 }
